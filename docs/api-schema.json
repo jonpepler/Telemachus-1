@@ -873,6 +873,28 @@
     "declaringClass": "ScienceCareerDataLinkHandler"
   },
   {
+    "key": "crash.hasRecent",
+    "description": "Whether a crash snapshot has been captured this session.",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "crash",
+    "returnType": "bool",
+    "declaringClass": "CrashDataHandler"
+  },
+  {
+    "key": "crash.lastCrash",
+    "description": "Most recent crash snapshot. Fields: vesselName, vesselId, body, situation, latitude, longitude, altitude, ut, what (what was hit), msg, eventKind (Crash/CrashSplashdown), partsLost (list of {partName, partTitle, partId, msg}), crewAboard (names), kerbalsKilled (names). Per-vessel events within 5 seconds coalesce into one snapshot; later vessels or later windows start fresh. Persists across scene changes; cleared on KSP restart.",
+    "units": "UNITLESS",
+    "plotable": false,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "crash",
+    "returnType": "object",
+    "declaringClass": "CrashDataHandler"
+  },
+  {
     "key": "dock.ax",
     "description": "Docking x Angle",
     "units": "DEG",
@@ -1865,6 +1887,28 @@
     "returnType": "bool",
     "requiresMod": "far",
     "declaringClass": "FARDataLinkHandler"
+  },
+  {
+    "key": "flight.achievements",
+    "description": "Running mission stats from KSP's FlightLogger — same data the Flight Results dialog renders in the Flight Achievements panel. Fields: missionTime, liftOff, highestAltitude, highestSpeed, highestSpeedOverLand, groundDistance, totalDistance, highestGee, partsLost (count), kerbalsKilled (count), missionEnd, flightEndMode. Returns null outside flight.",
+    "units": "UNITLESS",
+    "plotable": false,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "flight",
+    "returnType": "object",
+    "declaringClass": "FlightLogHandler"
+  },
+  {
+    "key": "flight.events",
+    "description": "Pre-formatted event timeline from KSP's FlightLogger — the same strings the in-game Flight Results dialog renders in the Flight Events panel. Empty list outside flight.",
+    "units": "UNITLESS",
+    "plotable": false,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "flight",
+    "returnType": "object",
+    "declaringClass": "FlightLogHandler"
   },
   {
     "key": "kerbalism.available",
@@ -4051,6 +4095,28 @@
     "returnType": "string",
     "requiresMod": "realchute",
     "declaringClass": "RealChuteDataLinkHandler"
+  },
+  {
+    "key": "recovery.hasRecent",
+    "description": "Whether a mission-summary snapshot has been captured this session (true after the first vessel is recovered).",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "recovery",
+    "returnType": "bool",
+    "declaringClass": "RecoveryDialogHandler"
+  },
+  {
+    "key": "recovery.lastSummary",
+    "description": "Most recent mission-summary snapshot. Includes vessel name, recovery location and factor, science/funds/reputation totals + earned + modifiers, and per-experiment, per-part, per-resource, per-crew breakdowns. Captures automatically when KSP completes recovery processing (no dialog dismissal needed). Persists across scene changes; cleared on KSP restart.",
+    "units": "UNITLESS",
+    "plotable": false,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "recovery",
+    "returnType": "object",
+    "declaringClass": "RecoveryDialogHandler"
   },
   {
     "key": "s.sensor",
