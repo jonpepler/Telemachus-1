@@ -76,8 +76,14 @@ namespace Telemachus
 
                 APIEntry entry;
                 if (attr.IsAction)
-                    // Action handlers must run on the main Unity thread
-                    entry = new ActionAPIEntry(queueDelayed(fn), attr.Key, attr.Description, formatter);
+                    // Action handlers must run on the main Unity thread.
+                    // attr.AlwaysEvaluable propagates so action keys can be
+                    // invoked outside Flight scene (e.g. tech.unlock from
+                    // SpaceCenter, alarm.add from anywhere) — the original
+                    // ActionAPIEntry ctor silently dropped this flag,
+                    // hard-gating every action to flight mode.
+                    entry = new ActionAPIEntry(queueDelayed(fn), attr.Key, attr.Description, formatter,
+                        attr.AlwaysEvaluable);
                 else if (attr.Plotable)
                     entry = new PlotableAPIEntry(fn, attr.Key, attr.Description,
                         formatter, attr.Units, attr.AlwaysEvaluable);
@@ -214,8 +220,10 @@ namespace Telemachus
     public class ActionAPIEntry : APIEntry
     {
         public ActionAPIEntry(DataLinkHandler.APIDelegate function,
-            string APIString, string name, DataSourceResultFormatter formatter)
-            : base(function, APIString, name, formatter, APIEntry.UnitType.UNITLESS)
+            string APIString, string name, DataSourceResultFormatter formatter,
+            bool alwaysEvaluable = false)
+            : base(function, APIString, name, formatter,
+                APIEntry.UnitType.UNITLESS, alwaysEvaluable)
         {
             plotable = false;
         }
