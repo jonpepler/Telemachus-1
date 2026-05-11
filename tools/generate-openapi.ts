@@ -481,7 +481,9 @@ const outPath = resolve(outDir, "openapi.yaml");
 writeFileSync(outPath, yaml + "\n");
 console.log(`Written ${outPath}`);
 
-// Also write the merged JSON for easy consumption
+// Also write the merged JSON for easy consumption.
+// sourceFile is stripped — it leaks absolute paths from the build machine and produces unreviewable diffs.
 const mergedJsonPath = resolve(outDir, "api-schema.json");
-writeFileSync(mergedJsonPath, JSON.stringify(all, null, 2) + "\n");
+const sanitized = all.map(({ sourceFile: _sourceFile, ...rest }) => rest);
+writeFileSync(mergedJsonPath, JSON.stringify(sanitized, null, 2) + "\n");
 console.log(`Written ${mergedJsonPath}`);
