@@ -10,7 +10,8 @@ authHeader=()
 if [ -n "${GITHUB_TOKEN:-}" ]; then
   authHeader=(-H "Authorization: token $GITHUB_TOKEN")
 fi
-houstonUrl="$(curl --silent "${authHeader[@]}" "https://api.github.com/repos/TeleIO/houston/releases/latest" | grep '"browser_download_url":' | cut -d : -f2,3 | cut -d \" -f2)"
+# `${authHeader[@]+"${authHeader[@]}"}` is the bash-3.2-safe expansion of a possibly-empty array under `set -u`.
+houstonUrl="$(curl --silent ${authHeader[@]+"${authHeader[@]}"} "https://api.github.com/repos/TeleIO/houston/releases/latest" | grep '"browser_download_url":' | cut -d : -f2,3 | cut -d \" -f2)"
 mkonUrl="https://github.com/TeleIO/mkon/archive/master.zip"
 
 echo "$ProjectDir"
@@ -29,9 +30,9 @@ cp "$TargetDir/websocket-sharp.dll" "$ProjectDir/../publish/GameData/Telemachus/
 
 cp "$ProjectDir/../TelemachusReborn.version" "$ProjectDir/../publish/GameData/Telemachus/"
 
-cp -ra "$ProjectDir/../Parts/."                         "$ProjectDir/../publish/GameData/Telemachus/Parts/"
-cp -ra "$ProjectDir/../WebPages/WebPages/src/."         "$ProjectDir/../publish/GameData/Telemachus/Plugins/PluginData/Telemachus/"
-cp -ra "$ProjectDir/../Licences/."                      "$ProjectDir/../publish/GameData/Telemachus/"
+cp -R "$ProjectDir/../Parts/."                         "$ProjectDir/../publish/GameData/Telemachus/Parts/"
+cp -R "$ProjectDir/../WebPages/WebPages/src/."         "$ProjectDir/../publish/GameData/Telemachus/Plugins/PluginData/Telemachus/"
+cp -R "$ProjectDir/../Licences/."                      "$ProjectDir/../publish/GameData/Telemachus/"
 cp     "$ProjectDir/../README.md"                       "$ProjectDir/../publish/GameData/Telemachus/"
 
 # Download Houston
@@ -43,7 +44,7 @@ unzip Houston.zip -d "$ProjectDir/../publish/GameData/Telemachus/Plugins/PluginD
 curl -Lo mkon.zip "$mkonUrl"
 mkdir -p "$ProjectDir/../publish/GameData/Telemachus/Plugins/PluginData/Telemachus/mkon"
 unzip mkon.zip
-cp -ra mkon-master/. "$ProjectDir/../publish/GameData/Telemachus/Plugins/PluginData/Telemachus/mkon"
+cp -R mkon-master/. "$ProjectDir/../publish/GameData/Telemachus/Plugins/PluginData/Telemachus/mkon"
 
 rm Houston.zip mkon.zip
 rm -rf mkon-master
@@ -67,8 +68,8 @@ kspDir="$ProjectDir/../ksp-telemachus-dev"
 if [ -d "$kspDir" ]; then
   rm -rf "$kspDir/GameData/Telemachus"
   mkdir -p "$kspDir/GameData/Telemachus/Plugins/PluginData/Telemachus/test"
-  cp -ra "$ProjectDir/../WebPages/WebPagesTest/src/." "$kspDir/GameData/Telemachus/Plugins/PluginData/Telemachus/test"
-  cp -ra "$ProjectDir/../publish/GameData/."          "$kspDir/GameData/"
+  cp -R "$ProjectDir/../WebPages/WebPagesTest/src/." "$kspDir/GameData/Telemachus/Plugins/PluginData/Telemachus/test"
+  cp -R "$ProjectDir/../publish/GameData/."          "$kspDir/GameData/"
 fi
 
 ls "$ProjectDir/../publish/GameData/Telemachus/Plugins/PluginData/Telemachus/"
