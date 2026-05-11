@@ -16,7 +16,7 @@ namespace Telemachus
     /// <summary>
     /// The public-facing, easy-to-access static face of the Telemachus plugin system.
     /// </summary>
-    static class PluginRegistration
+    public static class PluginRegistration
     {
         public static PluginManager Manager { get; set; }
 

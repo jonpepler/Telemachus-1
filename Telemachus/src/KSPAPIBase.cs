@@ -79,15 +79,14 @@ namespace Telemachus
             }
             catch (UnknownAPIException)
             {
-                if (!cleanFlightMode) throw new VariableNotEvaluable(apistring, "Plugin variables not evaluable outside flight scene with vessel");
-
-                // Try looking in the pluginManager
+                // Consult plugins before the flight-mode gate so scene-agnostic plugin keys work outside Flight.
                 var pluginAPI = _manager.GetAPIDelegate(name);
-                // If no entry, just continue the throwing of the exception
-                if (pluginAPI == null) throw;
-
-                // We found an API entry! Let's use that.
-                return pluginAPI(data.vessel, data.args.ToArray());
+                if (pluginAPI != null)
+                {
+                    return pluginAPI(data.vessel, data.args.ToArray());
+                }
+                if (!cleanFlightMode) throw new VariableNotEvaluable(apistring, "Plugin variables not evaluable outside flight scene with vessel");
+                throw;
             }
         }
     }

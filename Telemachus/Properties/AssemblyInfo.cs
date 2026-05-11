@@ -34,3 +34,6 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.7.0")]
 [assembly: AssemblyFileVersion("1.7.0")]
+
+// Allows external KSP plugins to take a [KSPAssemblyDependency("Telemachus", 1, 7)].
+[assembly: KSPAssembly("Telemachus", 1, 7)]
