@@ -29,6 +29,12 @@ namespace Telemachus
             APIHandlers.Add(new RecoveryDialogHandler(formatters));
             APIHandlers.Add(new CrashDataHandler(formatters));
             APIHandlers.Add(new FlightLogHandler(formatters));
+            APIHandlers.Add(new TechTreeDataLinkHandler(formatters));
+            APIHandlers.Add(new KscDataLinkHandler(formatters));
+            APIHandlers.Add(new ScienceInstrumentsDataLinkHandler(formatters));
+            APIHandlers.Add(new ContractsDataLinkHandler(formatters));
+            APIHandlers.Add(new LaunchDataLinkHandler(formatters));
+            APIHandlers.Add(new ActionGroupBindingsDataLinkHandler(formatters));
 
             APIHandlers.Add(new CompoundDataLinkHandler(
                 new List<DataLinkHandler> {

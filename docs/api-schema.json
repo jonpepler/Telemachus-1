@@ -873,6 +873,75 @@
     "declaringClass": "ScienceCareerDataLinkHandler"
   },
   {
+    "key": "contracts.accept",
+    "description": "Accept an Offered contract (moves to Active)",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": true,
+    "alwaysEvaluable": true,
+    "category": "career",
+    "returnType": "object",
+    "params": "long contractId",
+    "declaringClass": "ContractsDataLinkHandler"
+  },
+  {
+    "key": "contracts.active",
+    "description": "All Active contracts with parameters + reward shape",
+    "units": "UNITLESS",
+    "plotable": false,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "career",
+    "returnType": "object",
+    "declaringClass": "ContractsDataLinkHandler"
+  },
+  {
+    "key": "contracts.cancel",
+    "description": "Cancel an Active contract — forfeits work in progress; only valid for Active",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": true,
+    "alwaysEvaluable": true,
+    "category": "career",
+    "returnType": "object",
+    "params": "long contractId",
+    "declaringClass": "ContractsDataLinkHandler"
+  },
+  {
+    "key": "contracts.completedRecent",
+    "description": "Last N completed-or-failed contracts, newest-first",
+    "units": "UNITLESS",
+    "plotable": false,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "career",
+    "returnType": "object",
+    "declaringClass": "ContractsDataLinkHandler"
+  },
+  {
+    "key": "contracts.decline",
+    "description": "Decline an Offered contract — different verb from cancel; only valid for Offered",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": true,
+    "alwaysEvaluable": true,
+    "category": "career",
+    "returnType": "object",
+    "params": "long contractId",
+    "declaringClass": "ContractsDataLinkHandler"
+  },
+  {
+    "key": "contracts.offered",
+    "description": "Contracts in Mission Control awaiting accept",
+    "units": "UNITLESS",
+    "plotable": false,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "career",
+    "returnType": "object",
+    "declaringClass": "ContractsDataLinkHandler"
+  },
+  {
     "key": "crash.hasRecent",
     "description": "Whether a crash snapshot has been captured this session.",
     "units": "UNITLESS",
@@ -1265,6 +1334,17 @@
     "category": "flight",
     "returnType": "int",
     "params": "bool? onOff"
+  },
+  {
+    "key": "f.ag.bindings",
+    "description": "Per-action flat list of action-group bindings on the active vessel: { actionGroup, partId, partName, partTitle, moduleName, actionName, actionGuiName }. One row per (action, group) pair — an action bound to two groups emits two rows. Actions with no group (None) are omitted.",
+    "units": "UNITLESS",
+    "plotable": false,
+    "isAction": false,
+    "alwaysEvaluable": false,
+    "category": "control",
+    "returnType": "object",
+    "declaringClass": "ActionGroupBindingsDataLinkHandler"
   },
   {
     "key": "f.ag1",
@@ -1911,6 +1991,106 @@
     "declaringClass": "FlightLogHandler"
   },
   {
+    "key": "kc.crewRoster",
+    "description": "Whole-program kerbal roster — name, trait, type, gender, experience, experienceLevel, courage, stupidity, isBadass, veteran, careerFlights, careerEntries, currentVesselId, currentVesselName, available, unavailableReason",
+    "units": "UNITLESS",
+    "plotable": false,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "ksc",
+    "returnType": "object",
+    "declaringClass": "KscDataLinkHandler"
+  },
+  {
+    "key": "kc.facilityLevels",
+    "description": "Per-facility { level, max, upgradeFunds } for the 9 stock SC buildings",
+    "units": "UNITLESS",
+    "plotable": false,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "ksc",
+    "returnType": "object",
+    "declaringClass": "KscDataLinkHandler"
+  },
+  {
+    "key": "kc.launchSite",
+    "description": "Active flight's launch site name",
+    "units": "STRING",
+    "plotable": true,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "ksc",
+    "returnType": "string",
+    "declaringClass": "KscDataLinkHandler"
+  },
+  {
+    "key": "kc.padOccupied",
+    "description": "True iff the active vessel is in PRELAUNCH situation",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "ksc",
+    "returnType": "bool",
+    "declaringClass": "KscDataLinkHandler"
+  },
+  {
+    "key": "kc.padVesselTitle",
+    "description": "Vessel name when on the pad; empty otherwise",
+    "units": "STRING",
+    "plotable": true,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "ksc",
+    "returnType": "string",
+    "declaringClass": "KscDataLinkHandler"
+  },
+  {
+    "key": "kc.partsAvailable",
+    "description": "Number of parts purchasable under current tech",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "ksc",
+    "returnType": "int",
+    "declaringClass": "KscDataLinkHandler"
+  },
+  {
+    "key": "kc.savedShips",
+    "description": "Saved craft files in VAB+SPH — name, partCount, totalMass, facility, requiresFunds, missingParts",
+    "units": "UNITLESS",
+    "plotable": false,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "ksc",
+    "returnType": "object",
+    "declaringClass": "KscDataLinkHandler"
+  },
+  {
+    "key": "kc.scene",
+    "description": "Current KSP scene (Flight, SpaceCenter, Editor, TrackingStation, MainMenu, Other)",
+    "units": "STRING",
+    "plotable": true,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "ksc",
+    "returnType": "string",
+    "declaringClass": "KscDataLinkHandler"
+  },
+  {
+    "key": "kc.upgradeFacility",
+    "description": "Upgrade a SC facility by short name (launchPad, vab, sph, …)",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": true,
+    "alwaysEvaluable": true,
+    "category": "ksc",
+    "returnType": "object",
+    "params": "string facilityShortName",
+    "declaringClass": "KscDataLinkHandler"
+  },
+  {
     "key": "kerbalism.available",
     "description": "Kerbalism Is Installed",
     "units": "UNITLESS",
@@ -2353,6 +2533,107 @@
     "returnType": "int",
     "requiresMod": "kerbalism",
     "declaringClass": "KerbalismDataLinkHandler"
+  },
+  {
+    "key": "ksp.canRevert",
+    "description": "Whether any revert path is available right now (post-init snapshot OR prelaunch snapshot). Mirrors FlightDriver.CanRevert.",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "launch",
+    "returnType": "bool",
+    "declaringClass": "LaunchDataLinkHandler"
+  },
+  {
+    "key": "ksp.canRevertToEditor",
+    "description": "Whether ksp.revertToEditor would currently succeed (FlightDriver.CanRevertToPrelaunch). Useful for graying out the revert-to-editor UI when the snapshot isn't available.",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "launch",
+    "returnType": "bool",
+    "declaringClass": "LaunchDataLinkHandler"
+  },
+  {
+    "key": "ksp.canRevertToLaunch",
+    "description": "Whether ksp.revertToLaunch would currently succeed (FlightDriver.CanRevertToPostInit). Useful for graying out the revert-to-launch UI when the snapshot isn't available.",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "launch",
+    "returnType": "bool",
+    "declaringClass": "LaunchDataLinkHandler"
+  },
+  {
+    "key": "ksp.launch",
+    "description": "Load a saved craft to the chosen pad (shipName, facility, site, crewSemicolons). Refuses outside SC/Editor, refuses if an active vessel exists.",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": true,
+    "alwaysEvaluable": true,
+    "category": "launch",
+    "returnType": "object",
+    "params": "string shipName, string facility, string site, string crewSemicolons",
+    "declaringClass": "LaunchDataLinkHandler"
+  },
+  {
+    "key": "ksp.recover",
+    "description": "Recover the active vessel — only valid in PRELAUNCH / LANDED / SPLASHED",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": true,
+    "alwaysEvaluable": false,
+    "category": "launch",
+    "returnType": "object",
+    "declaringClass": "LaunchDataLinkHandler"
+  },
+  {
+    "key": "ksp.revertToEditor",
+    "description": "Revert flight back to the named editor scene (vab|sph)",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": true,
+    "alwaysEvaluable": false,
+    "category": "launch",
+    "returnType": "object",
+    "params": "string editor",
+    "declaringClass": "LaunchDataLinkHandler"
+  },
+  {
+    "key": "ksp.revertToLaunch",
+    "description": "Revert flight to the just-launched state (vessel back on pad, PRELAUNCH situation). Same as the Flight Results dialog's 'Revert to Launch' button. Refuses outside Flight scene or when the post-init snapshot isn't available.",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": true,
+    "alwaysEvaluable": true,
+    "category": "launch",
+    "returnType": "object",
+    "declaringClass": "LaunchDataLinkHandler"
+  },
+  {
+    "key": "ksp.toSpaceCenter",
+    "description": "Switch to the Space Center scene. Mirrors the Flight Results dialog's 'Space Center' button.",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": true,
+    "alwaysEvaluable": true,
+    "category": "launch",
+    "returnType": "object",
+    "declaringClass": "LaunchDataLinkHandler"
+  },
+  {
+    "key": "ksp.toTrackingStation",
+    "description": "Switch to the Tracking Station scene. Mirrors the Flight Results dialog's 'Tracking Station' button.",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": true,
+    "alwaysEvaluable": true,
+    "category": "launch",
+    "returnType": "object",
+    "declaringClass": "LaunchDataLinkHandler"
   },
   {
     "key": "land.bestSpeedAtImpact",
@@ -4180,6 +4461,28 @@
     "declaringClass": "SensorDataLinkHandler"
   },
   {
+    "key": "sci.canRecoverTotal",
+    "description": "Total dataAmount across all stored ScienceData on the active vessel (alias of canTransmitTotal — separate key in case Phase 4 formulas diverge)",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": false,
+    "alwaysEvaluable": false,
+    "category": "science",
+    "returnType": "double",
+    "declaringClass": "ScienceInstrumentsDataLinkHandler"
+  },
+  {
+    "key": "sci.canTransmitTotal",
+    "description": "Total dataAmount across all stored ScienceData on the active vessel",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": false,
+    "alwaysEvaluable": false,
+    "category": "science",
+    "returnType": "double",
+    "declaringClass": "ScienceInstrumentsDataLinkHandler"
+  },
+  {
     "key": "sci.count",
     "description": "Number of Science Experiments Aboard",
     "units": "UNITLESS",
@@ -4202,6 +4505,41 @@
     "declaringClass": "ScienceCareerDataLinkHandler"
   },
   {
+    "key": "sci.deploy",
+    "description": "Run an experiment by part flightID (no result dialog — direct data capture)",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": true,
+    "alwaysEvaluable": false,
+    "category": "science",
+    "returnType": "object",
+    "params": "uint partId",
+    "declaringClass": "ScienceInstrumentsDataLinkHandler"
+  },
+  {
+    "key": "sci.dump",
+    "description": "Discard all stored data on the part without transmitting",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": true,
+    "alwaysEvaluable": false,
+    "category": "science",
+    "returnType": "object",
+    "params": "uint partId",
+    "declaringClass": "ScienceInstrumentsDataLinkHandler"
+  },
+  {
+    "key": "sci.experimentBreakdown",
+    "description": "Per-stored-data detail on the active vessel — subjectId / biome / situation / mits / transmit values / remaining potential",
+    "units": "UNITLESS",
+    "plotable": false,
+    "isAction": false,
+    "alwaysEvaluable": false,
+    "category": "science",
+    "returnType": "object",
+    "declaringClass": "ScienceInstrumentsDataLinkHandler"
+  },
+  {
     "key": "sci.experiments",
     "description": "Experiments With Data",
     "units": "UNITLESS",
@@ -4211,6 +4549,41 @@
     "category": "science",
     "returnType": "object",
     "declaringClass": "ScienceCareerDataLinkHandler"
+  },
+  {
+    "key": "sci.instruments",
+    "description": "Per-instrument state on the active vessel (partId, partTitle, expId, deployed, hasData, rerunnable, inoperable)",
+    "units": "UNITLESS",
+    "plotable": false,
+    "isAction": false,
+    "alwaysEvaluable": false,
+    "category": "science",
+    "returnType": "object",
+    "declaringClass": "ScienceInstrumentsDataLinkHandler"
+  },
+  {
+    "key": "sci.reset",
+    "description": "Reset experiment — clears Deployed + drops data, makes rerunnable instruments ready to run again",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": true,
+    "alwaysEvaluable": false,
+    "category": "science",
+    "returnType": "object",
+    "params": "uint partId",
+    "declaringClass": "ScienceInstrumentsDataLinkHandler"
+  },
+  {
+    "key": "sci.transmit",
+    "description": "Transmit stored data on the part via the active vessel's best transmitter",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": true,
+    "alwaysEvaluable": false,
+    "category": "science",
+    "returnType": "object",
+    "params": "uint partId",
+    "declaringClass": "ScienceInstrumentsDataLinkHandler"
   },
   {
     "key": "t.currentRate",
@@ -4638,6 +5011,51 @@
     "category": "target",
     "returnType": "string",
     "declaringClass": "TargetDataLinkHandler"
+  },
+  {
+    "key": "tech.affordable",
+    "description": "Tech-tree nodes affordable right now (not yet unlocked, scienceCost <= current science)",
+    "units": "UNITLESS",
+    "plotable": false,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "career",
+    "returnType": "object",
+    "declaringClass": "TechTreeDataLinkHandler"
+  },
+  {
+    "key": "tech.unlock",
+    "description": "Unlock a tech-tree node — deducts science, marks node Available",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": true,
+    "alwaysEvaluable": true,
+    "category": "career",
+    "returnType": "object",
+    "params": "string techId",
+    "declaringClass": "TechTreeDataLinkHandler"
+  },
+  {
+    "key": "tech.unlockedIds",
+    "description": "Tech-tree node ids the player has researched",
+    "units": "UNITLESS",
+    "plotable": false,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "career",
+    "returnType": "object",
+    "declaringClass": "TechTreeDataLinkHandler"
+  },
+  {
+    "key": "tech.unlockedPartCount",
+    "description": "Number of parts purchasable under current tech",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "career",
+    "returnType": "int",
+    "declaringClass": "TechTreeDataLinkHandler"
   },
   {
     "key": "therm.anyEnginesOverheating",
