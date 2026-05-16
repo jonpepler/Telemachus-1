@@ -51,6 +51,30 @@ namespace Telemachus
         static FieldInfo _anomalyKnown;
         static FieldInfo _anomalyDetail;
 
+        // SCANcontroller singleton (for scanner / known-vessel listings)
+        static Type _controllerType;       // SCANsat.SCANcontroller
+        static PropertyInfo _controllerSingleton; // static SCANcontroller controller { get; }
+        static PropertyInfo _knownVesselsProp;    // public List<SCANvessel> Known_Vessels
+        static Type _scanVesselType;       // SCANsat.SCANcontroller.SCANvessel
+        static FieldInfo _svVesselField;          // Vessel vessel
+        static FieldInfo _svBodyField;            // CelestialBody body
+        static FieldInfo _svLatField;             // double latitude
+        static FieldInfo _svLonField;             // double longitude
+        static FieldInfo _svSensorsField;         // List<SCANsensor> sensors
+        static Type _scanSensorType;       // SCANsat.SCANcontroller.SCANsensor
+        static FieldInfo _ssTypeField;            // SCANtype sensor
+        static FieldInfo _ssFovField;             // double fov
+        static FieldInfo _ssMinAltField;          // double min_alt
+        static FieldInfo _ssMaxAltField;          // double max_alt
+        static FieldInfo _ssBestAltField;         // double best_alt
+        static FieldInfo _ssInRangeField;         // bool inRange
+        static FieldInfo _ssBestRangeField;       // bool bestRange
+
+        // SCANdata.HeightMapValue(int body, int lon, int lat, bool useTemp)
+        static MethodInfo _heightMapValue;
+        // SCANdata.Body — needed to drive HeightMapValue's first arg.
+        static PropertyInfo _dataBodyProp;
+
         public SCANsatDataLinkHandler(FormatterProvider formatters)
             : base(formatters) { }
 
@@ -70,6 +94,12 @@ namespace Telemachus
                         _dataType = a.GetType("SCANsat.SCAN_Data.SCANdata", false);
                     if (_anomalyType == null)
                         _anomalyType = a.GetType("SCANsat.SCAN_Data.SCANanomaly", false);
+                    if (_controllerType == null)
+                        _controllerType = a.GetType("SCANsat.SCANcontroller", false);
+                    if (_scanVesselType == null)
+                        _scanVesselType = a.GetType("SCANsat.SCANcontroller+SCANvessel", false);
+                    if (_scanSensorType == null)
+                        _scanSensorType = a.GetType("SCANsat.SCANcontroller+SCANsensor", false);
                 }
                 catch { }
             }
@@ -100,6 +130,11 @@ namespace Telemachus
             {
                 _coverageProp = _dataType.GetProperty("Coverage", pubInstance);
                 _anomaliesProp = _dataType.GetProperty("Anomalies", pubInstance);
+                _dataBodyProp = _dataType.GetProperty("Body", pubInstance);
+                _heightMapValue = _dataType.GetMethod(
+                    "HeightMapValue", pubInstance, null,
+                    new Type[] { typeof(int), typeof(int), typeof(int), typeof(bool) },
+                    null);
             }
 
             if (_anomalyType != null)
@@ -109,6 +144,34 @@ namespace Telemachus
                 _anomalyLon = _anomalyType.GetField("longitude", pubInstance);
                 _anomalyKnown = _anomalyType.GetField("known", pubInstance);
                 _anomalyDetail = _anomalyType.GetField("detail", pubInstance);
+            }
+
+            if (_controllerType != null)
+            {
+                _controllerSingleton = _controllerType.GetProperty(
+                    "controller", pubStatic);
+                _knownVesselsProp = _controllerType.GetProperty(
+                    "Known_Vessels", pubInstance);
+            }
+
+            if (_scanVesselType != null)
+            {
+                _svVesselField = _scanVesselType.GetField("vessel", pubInstance);
+                _svBodyField = _scanVesselType.GetField("body", pubInstance);
+                _svLatField = _scanVesselType.GetField("latitude", pubInstance);
+                _svLonField = _scanVesselType.GetField("longitude", pubInstance);
+                _svSensorsField = _scanVesselType.GetField("sensors", pubInstance);
+            }
+
+            if (_scanSensorType != null)
+            {
+                _ssTypeField = _scanSensorType.GetField("sensor", pubInstance);
+                _ssFovField = _scanSensorType.GetField("fov", pubInstance);
+                _ssMinAltField = _scanSensorType.GetField("min_alt", pubInstance);
+                _ssMaxAltField = _scanSensorType.GetField("max_alt", pubInstance);
+                _ssBestAltField = _scanSensorType.GetField("best_alt", pubInstance);
+                _ssInRangeField = _scanSensorType.GetField("inRange", pubInstance);
+                _ssBestRangeField = _scanSensorType.GetField("bestRange", pubInstance);
             }
         }
 
@@ -282,6 +345,233 @@ namespace Telemachus
                     ["known"] = _anomalyKnown != null ? _anomalyKnown.GetValue(a) : null,
                     ["detail"] = _anomalyDetail != null ? _anomalyDetail.GetValue(a) : null,
                 });
+            }
+            return list;
+        }
+
+        [TelemetryAPI("scan.heightGrid",
+            "Bulk per-tile elevation grid for the named body. Returns " +
+            "{ width: 360, height: 180, minMetres, maxMetres, " +
+            "heights: <base64 Int16[] (metres)> } row-major in the same " +
+            "(lon+180)*height + (lat+90) order as scan.maskBitmap. Uses " +
+            "PQS lookups so SCANsat installation is not required, but " +
+            "operators should still gate display behind scan.maskBitmap " +
+            "coverage for fog-of-war semantics. Plotable=false — fetch " +
+            "once on body change, do not stream. ~130 KB base64 per body.",
+            AlwaysEvaluable = false,
+            Plotable = false,
+            Category = "scan",
+            ReturnType = "object",
+            Params = "string bodyName")]
+        object ScanHeightGrid(DataSources ds)
+        {
+            if (ds.args == null || ds.args.Count < 1) return null;
+            var body = BodyByName(ds.args[0]);
+            if (body == null || body.pqsController == null) return null;
+
+            const int W = 360;
+            const int H = 180;
+            var grid = new short[W * H];
+            short minVal = short.MaxValue;
+            short maxVal = short.MinValue;
+            int idx = 0;
+            for (int x = 0; x < W; x++)
+            {
+                double lon = x - 180 + 0.5;
+                double rlon = lon * (Math.PI / 180.0);
+                double cosLon = Math.Cos(rlon);
+                double sinLon = Math.Sin(rlon);
+                for (int y = 0; y < H; y++)
+                {
+                    double lat = y - 90 + 0.5;
+                    double rlat = lat * (Math.PI / 180.0);
+                    double cosLat = Math.Cos(rlat);
+                    var rad = new Vector3d(cosLat * cosLon, Math.Sin(rlat), cosLat * sinLon);
+                    double m = body.pqsController.GetSurfaceHeight(rad) - body.pqsController.radius;
+                    short s = (short)Math.Max(short.MinValue, Math.Min(short.MaxValue, Math.Round(m)));
+                    grid[idx++] = s;
+                    if (s < minVal) minVal = s;
+                    if (s > maxVal) maxVal = s;
+                }
+            }
+
+            var bytes = new byte[grid.Length * 2];
+            for (int i = 0; i < grid.Length; i++)
+            {
+                var s = grid[i];
+                bytes[i * 2] = (byte)(s & 0xFF);
+                bytes[i * 2 + 1] = (byte)((s >> 8) & 0xFF);
+            }
+
+            return new Dictionary<string, object>
+            {
+                ["width"] = W,
+                ["height"] = H,
+                ["minMetres"] = (int)minVal,
+                ["maxMetres"] = (int)maxVal,
+                ["heights"] = Convert.ToBase64String(bytes),
+            };
+        }
+
+        [TelemetryAPI("scan.biomeGrid",
+            "Bulk per-tile biome index grid for the named body. Returns " +
+            "{ width: 360, height: 180, biomes: [{ name, displayName, " +
+            "colour: 0xRRGGBB }], indices: <base64 byte[]> } where " +
+            "indices[i] is the position of that tile's biome in `biomes` " +
+            "(0xFF for null / bodies without a BiomeMap). Stock " +
+            "CelestialBody.BiomeMap lookup — no SCANsat install required. " +
+            "Plotable=false — fetch once on body change. ~70 KB base64.",
+            AlwaysEvaluable = false,
+            Plotable = false,
+            Category = "scan",
+            ReturnType = "object",
+            Params = "string bodyName")]
+        object ScanBiomeGrid(DataSources ds)
+        {
+            if (ds.args == null || ds.args.Count < 1) return null;
+            var body = BodyByName(ds.args[0]);
+            if (body == null) return null;
+            const int W = 360;
+            const int H = 180;
+            var indices = new byte[W * H];
+            var biomeOrder = new List<CBAttributeMapSO.MapAttribute>();
+            var biomeIndex = new Dictionary<CBAttributeMapSO.MapAttribute, byte>();
+
+            int idx = 0;
+            for (int x = 0; x < W; x++)
+            {
+                double lon = x - 180 + 0.5;
+                for (int y = 0; y < H; y++)
+                {
+                    double lat = y - 90 + 0.5;
+                    CBAttributeMapSO.MapAttribute attr = null;
+                    try { attr = body.BiomeMap?.GetAtt(lat * (Math.PI / 180.0), lon * (Math.PI / 180.0)); }
+                    catch { attr = null; }
+                    if (attr == null)
+                    {
+                        indices[idx++] = 0xFF;
+                        continue;
+                    }
+                    if (!biomeIndex.TryGetValue(attr, out var slot))
+                    {
+                        slot = (byte)Math.Min(254, biomeOrder.Count);
+                        biomeIndex[attr] = slot;
+                        biomeOrder.Add(attr);
+                    }
+                    indices[idx++] = slot;
+                }
+            }
+
+            var biomeList = new List<Dictionary<string, object>>();
+            foreach (var attr in biomeOrder)
+            {
+                int rgb = 0;
+                try
+                {
+                    var c = attr.mapColor;
+                    rgb = ((int)(c.r * 255) << 16) | ((int)(c.g * 255) << 8) | (int)(c.b * 255);
+                }
+                catch { rgb = 0; }
+                biomeList.Add(new Dictionary<string, object>
+                {
+                    ["name"] = attr.name ?? string.Empty,
+                    ["displayName"] = attr.displayname ?? attr.name ?? string.Empty,
+                    ["colour"] = rgb,
+                });
+            }
+
+            return new Dictionary<string, object>
+            {
+                ["width"] = W,
+                ["height"] = H,
+                ["biomes"] = biomeList,
+                ["indices"] = Convert.ToBase64String(indices),
+            };
+        }
+
+        [TelemetryAPI("scan.scanningVessels",
+            "Every vessel SCANsat is tracking (active or unloaded) plus its " +
+            "current sub-vessel ground point and the list of scanner parts " +
+            "on board with their FoV / altitude gates and live in-range " +
+            "state. Cross-vessel by design — SCANsat keeps unloaded " +
+            "satellites scanning in the background, so this surface " +
+            "deliberately does NOT filter to the active vessel. Returns " +
+            "null when SCANsat isn't installed.",
+            Category = "scan",
+            ReturnType = "object")]
+        object ScanScanningVessels(DataSources ds)
+        {
+            Search();
+            if (_controllerSingleton == null || _knownVesselsProp == null
+                || _scanVesselType == null || _scanSensorType == null)
+            {
+                return null;
+            }
+            object controller;
+            try
+            {
+                controller = _controllerSingleton.GetValue(null, null);
+            }
+            catch (Exception e)
+            {
+                PluginLogger.debug("scan.scanningVessels singleton threw: " + e.Message);
+                return null;
+            }
+            if (controller == null) return null;
+
+            object known;
+            try
+            {
+                known = _knownVesselsProp.GetValue(controller, null);
+            }
+            catch (Exception e)
+            {
+                PluginLogger.debug("scan.scanningVessels Known_Vessels threw: " + e.Message);
+                return null;
+            }
+
+            var list = new List<Dictionary<string, object>>();
+            if (known is IEnumerable kn)
+            {
+                foreach (var sv in kn)
+                {
+                    if (sv == null) continue;
+                    var vessel = _svVesselField?.GetValue(sv) as Vessel;
+                    var bodyObj = _svBodyField?.GetValue(sv) as CelestialBody;
+                    double subLat = _svLatField != null ? (double)_svLatField.GetValue(sv) : 0;
+                    double subLon = _svLonField != null ? (double)_svLonField.GetValue(sv) : 0;
+                    var sensorList = _svSensorsField?.GetValue(sv) as IEnumerable;
+
+                    var sensors = new List<Dictionary<string, object>>();
+                    if (sensorList != null)
+                    {
+                        foreach (var ss in sensorList)
+                        {
+                            if (ss == null) continue;
+                            sensors.Add(new Dictionary<string, object>
+                            {
+                                ["type"] = _ssTypeField != null ? (int)_ssTypeField.GetValue(ss) : 0,
+                                ["fov"] = _ssFovField != null ? (double)_ssFovField.GetValue(ss) : 0,
+                                ["minAlt"] = _ssMinAltField != null ? (double)_ssMinAltField.GetValue(ss) : 0,
+                                ["maxAlt"] = _ssMaxAltField != null ? (double)_ssMaxAltField.GetValue(ss) : 0,
+                                ["bestAlt"] = _ssBestAltField != null ? (double)_ssBestAltField.GetValue(ss) : 0,
+                                ["inRange"] = _ssInRangeField != null && (bool)_ssInRangeField.GetValue(ss),
+                                ["bestRange"] = _ssBestRangeField != null && (bool)_ssBestRangeField.GetValue(ss),
+                            });
+                        }
+                    }
+
+                    list.Add(new Dictionary<string, object>
+                    {
+                        ["vesselId"] = vessel != null ? vessel.id.ToString() : string.Empty,
+                        ["vesselName"] = vessel != null ? vessel.GetName() : string.Empty,
+                        ["body"] = bodyObj != null ? bodyObj.bodyName : string.Empty,
+                        ["subLatitude"] = subLat,
+                        ["subLongitude"] = subLon,
+                        ["altitude"] = vessel != null ? vessel.altitude : 0,
+                        ["sensors"] = sensors,
+                    });
+                }
             }
             return list;
         }
