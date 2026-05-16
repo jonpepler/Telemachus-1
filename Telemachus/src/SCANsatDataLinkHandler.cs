@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using UnityEngine;
 
 namespace Telemachus
 {
@@ -69,6 +70,19 @@ namespace Telemachus
         static FieldInfo _ssBestAltField;         // double best_alt
         static FieldInfo _ssInRangeField;         // bool inRange
         static FieldInfo _ssBestRangeField;       // bool bestRange
+
+        // SCANvessel.trackColor — the combined ground-track tint SCANsat
+        // paints, useful so the minimap matches the in-game overlay.
+        static FieldInfo _svTrackColorField;      // Color32 trackColor
+
+        // Private SCANcontroller method that returns the max effective FoV
+        // (in degrees) across a vessel's sensors at its current altitude.
+        // Already accounts for altitude scaling, surfscale, and the 20°
+        // cap — i.e. the same width SCANsat uses to paint its own ground
+        // tracks via drawGroundTrackTris. We reflect into it (rather than
+        // re-implementing the formula client-side) so the wire value is
+        // SCANsat's actual canonical number.
+        static MethodInfo _getFovMethod;
 
         // SCANdata.HeightMapValue(int body, int lon, int lat, bool useTemp)
         static MethodInfo _heightMapValue;
@@ -161,6 +175,24 @@ namespace Telemachus
                 _svLatField = _scanVesselType.GetField("latitude", pubInstance);
                 _svLonField = _scanVesselType.GetField("longitude", pubInstance);
                 _svSensorsField = _scanVesselType.GetField("sensors", pubInstance);
+                _svTrackColorField = _scanVesselType.GetField("trackColor", pubInstance);
+            }
+
+            if (_controllerType != null && _scanVesselType != null)
+            {
+                var privInstance = BindingFlags.NonPublic | BindingFlags.Instance;
+                _getFovMethod = _controllerType.GetMethod(
+                    "getFOV",
+                    privInstance,
+                    null,
+                    new Type[] { _scanVesselType, typeof(CelestialBody) },
+                    null);
+                if (_getFovMethod == null)
+                {
+                    PluginLogger.debug(
+                        "SCANcontroller.getFOV(SCANvessel, CelestialBody) not " +
+                        "found — ground-track width will be omitted.");
+                }
             }
 
             if (_scanSensorType != null)
@@ -495,8 +527,16 @@ namespace Telemachus
             "on board with their FoV / altitude gates and live in-range " +
             "state. Cross-vessel by design — SCANsat keeps unloaded " +
             "satellites scanning in the background, so this surface " +
-            "deliberately does NOT filter to the active vessel. Returns " +
-            "null when SCANsat isn't installed.",
+            "deliberately does NOT filter to the active vessel. Each entry " +
+            "also carries SCANsat's actual per-tick ground-track values: " +
+            "groundTrackWidthDeg (reflected from the private " +
+            "SCANcontroller.getFOV — same number used to paint the in-game " +
+            "overlay; this is the per-side latitude half-width in degrees), " +
+            "groundTrackLonHalfDeg (the per-side longitude half-width = " +
+            "groundTrackWidthDeg / cos(|subLat|), capped at 120° per " +
+            "SCANsat's own coverage paint loop), and trackColor ({r,g,b,a} " +
+            "from SCANvessel.trackColor). Returns null when SCANsat isn't " +
+            "installed.",
             Category = "scan",
             ReturnType = "object")]
         object ScanScanningVessels(DataSources ds)
@@ -561,6 +601,79 @@ namespace Telemachus
                         }
                     }
 
+                    // SCANsat's actual ground-track width for this vessel
+                    // at its current altitude — same value the in-game
+                    // overlay paints. We reflect into the private
+                    // SCANcontroller.getFOV so the wire field never drifts
+                    // from what SCANsat is drawing.
+                    object fovDegBox = null;
+                    if (_getFovMethod != null && bodyObj != null)
+                    {
+                        try
+                        {
+                            fovDegBox = _getFovMethod.Invoke(
+                                controller, new object[] { sv, bodyObj });
+                        }
+                        catch (Exception e)
+                        {
+                            PluginLogger.debug(
+                                "scan.scanningVessels getFOV threw: " + e.Message);
+                        }
+                    }
+
+                    // Longitude widening at the current latitude, matching
+                    // SCANsat's coverage paint loop in SCANcontroller.cs:
+                    //   fovW = fov * (1 / cos(|lat|));
+                    //   if (fovW > 120) fovW = 120;
+                    // We mirror that here so the wire shape carries
+                    // SCANsat's exact lat/lon footprint extent — clients
+                    // just draw `(±latHalfDeg, ±lonHalfDeg)`.
+                    object lonHalfDegBox = null;
+                    if (fovDegBox is double fovDeg && fovDeg > 0)
+                    {
+                        double absLat = Math.Abs(subLat);
+                        if (absLat >= 90)
+                        {
+                            lonHalfDegBox = 120d;
+                        }
+                        else
+                        {
+                            double cosLat = Math.Cos(absLat * Math.PI / 180.0);
+                            double fovW = cosLat > 1e-6
+                                ? fovDeg / cosLat
+                                : 120d;
+                            if (fovW > 120) fovW = 120;
+                            lonHalfDegBox = fovW;
+                        }
+                    }
+
+                    // SCANsat's combined per-vessel track colour. Matches
+                    // the tint of the in-game ground track overlay so the
+                    // minimap stays visually aligned.
+                    Dictionary<string, object> trackColor = null;
+                    if (_svTrackColorField != null)
+                    {
+                        try
+                        {
+                            var c = _svTrackColorField.GetValue(sv);
+                            if (c is Color32 c32)
+                            {
+                                trackColor = new Dictionary<string, object>
+                                {
+                                    ["r"] = c32.r,
+                                    ["g"] = c32.g,
+                                    ["b"] = c32.b,
+                                    ["a"] = c32.a,
+                                };
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            PluginLogger.debug(
+                                "scan.scanningVessels trackColor threw: " + e.Message);
+                        }
+                    }
+
                     list.Add(new Dictionary<string, object>
                     {
                         ["vesselId"] = vessel != null ? vessel.id.ToString() : string.Empty,
@@ -570,6 +683,9 @@ namespace Telemachus
                         ["subLongitude"] = subLon,
                         ["altitude"] = vessel != null ? vessel.altitude : 0,
                         ["sensors"] = sensors,
+                        ["groundTrackWidthDeg"] = fovDegBox,
+                        ["groundTrackLonHalfDeg"] = lonHalfDegBox,
+                        ["trackColor"] = trackColor,
                     });
                 }
             }
