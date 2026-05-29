@@ -75,38 +75,14 @@
     "declaringClass": "APIDataLinkHandler"
   },
   {
-    "key": "alarm.add",
-    "description": "Create a stock-clock alarm. Args: title, ut, [warpAction], [message]. warpAction = DoNothing | KillWarp | PauseGame (default KillWarp). message = No | Yes | YesIfOtherVessel (default Yes). Returns the new alarm's id (uint), or an error string.",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "alarm",
-    "returnType": "object",
-    "params": "string title, double ut, string warpAction, string message",
-    "declaringClass": "AlarmClockDataLinkHandler"
-  },
-  {
     "key": "alarm.count",
     "description": "Number of Active Alarms",
     "units": "UNITLESS",
     "plotable": true,
     "isAction": false,
-    "alwaysEvaluable": true,
+    "alwaysEvaluable": false,
     "category": "alarm",
     "returnType": "int",
-    "declaringClass": "AlarmClockDataLinkHandler"
-  },
-  {
-    "key": "alarm.delete",
-    "description": "Remove a stock-clock alarm by id. Args: id. Returns true if the alarm was found and queued for removal, false if no alarm with that id exists right now.",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "alarm",
-    "returnType": "bool",
-    "params": "uint id",
     "declaringClass": "AlarmClockDataLinkHandler"
   },
   {
@@ -115,7 +91,7 @@
     "units": "UNITLESS",
     "plotable": false,
     "isAction": false,
-    "alwaysEvaluable": true,
+    "alwaysEvaluable": false,
     "category": "alarm",
     "returnType": "object",
     "formatter": "AlarmList",
@@ -127,7 +103,7 @@
     "units": "UNITLESS",
     "plotable": false,
     "isAction": false,
-    "alwaysEvaluable": true,
+    "alwaysEvaluable": false,
     "category": "alarm",
     "returnType": "object",
     "formatter": "Alarm",
@@ -139,7 +115,7 @@
     "units": "TIME",
     "plotable": true,
     "isAction": false,
-    "alwaysEvaluable": true,
+    "alwaysEvaluable": false,
     "category": "alarm",
     "returnType": "double",
     "declaringClass": "AlarmClockDataLinkHandler"
@@ -940,28 +916,6 @@
     "category": "career",
     "returnType": "object",
     "declaringClass": "ContractsDataLinkHandler"
-  },
-  {
-    "key": "crash.hasRecent",
-    "description": "Whether a crash snapshot has been captured this session.",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "crash",
-    "returnType": "bool",
-    "declaringClass": "CrashDataHandler"
-  },
-  {
-    "key": "crash.lastCrash",
-    "description": "Most recent crash snapshot. Fields: vesselName, vesselId, body, situation, latitude, longitude, altitude, ut, what (what was hit), msg, eventKind (Crash/CrashSplashdown), partsLost (list of {partName, partTitle, partId, msg}), crewAboard (names), kerbalsKilled (names). Per-vessel events within 5 seconds coalesce into one snapshot; later vessels or later windows start fresh. Persists across scene changes; cleared on KSP restart.",
-    "units": "UNITLESS",
-    "plotable": false,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "crash",
-    "returnType": "object",
-    "declaringClass": "CrashDataHandler"
   },
   {
     "key": "dock.ax",
@@ -1969,28 +1923,6 @@
     "declaringClass": "FARDataLinkHandler"
   },
   {
-    "key": "flight.achievements",
-    "description": "Running mission stats from KSP's FlightLogger — same data the Flight Results dialog renders in the Flight Achievements panel. Fields: missionTime, liftOff, highestAltitude, highestSpeed, highestSpeedOverLand, groundDistance, totalDistance, highestGee, partsLost (count), kerbalsKilled (count), missionEnd, flightEndMode. Returns null outside flight.",
-    "units": "UNITLESS",
-    "plotable": false,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "flight",
-    "returnType": "object",
-    "declaringClass": "FlightLogHandler"
-  },
-  {
-    "key": "flight.events",
-    "description": "Pre-formatted event timeline from KSP's FlightLogger — the same strings the in-game Flight Results dialog renders in the Flight Events panel. Empty list outside flight.",
-    "units": "UNITLESS",
-    "plotable": false,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "flight",
-    "returnType": "object",
-    "declaringClass": "FlightLogHandler"
-  },
-  {
     "key": "kc.crewRoster",
     "description": "Whole-program kerbal roster — name, trait, type, gender, experience, experienceLevel, courage, stupidity, isBadass, veteran, careerFlights, careerEntries, currentVesselId, currentVesselName, available, unavailableReason",
     "units": "UNITLESS",
@@ -2003,7 +1935,7 @@
   },
   {
     "key": "kc.facilityLevels",
-    "description": "Per-facility { level, max, upgradeFunds } for the 9 stock SC buildings",
+    "description": "Per-facility { level, max, upgradeFunds, upgradeFundsEffective (post strategy modifier), currentLevelText, nextLevelText } for the 9 stock SC buildings",
     "units": "UNITLESS",
     "plotable": false,
     "isAction": false,
@@ -2058,7 +1990,7 @@
   },
   {
     "key": "kc.savedShips",
-    "description": "Saved craft files in VAB+SPH — name, partCount, totalMass, facility, requiresFunds, missingParts",
+    "description": "Saved craft files in VAB+SPH — name, partCount, totalMass, facility, requiresFunds, requiresFundsEffective (post strategy modifier), missingParts",
     "units": "UNITLESS",
     "plotable": false,
     "isAction": false,
@@ -4378,28 +4310,6 @@
     "declaringClass": "RealChuteDataLinkHandler"
   },
   {
-    "key": "recovery.hasRecent",
-    "description": "Whether a mission-summary snapshot has been captured this session (true after the first vessel is recovered).",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "recovery",
-    "returnType": "bool",
-    "declaringClass": "RecoveryDialogHandler"
-  },
-  {
-    "key": "recovery.lastSummary",
-    "description": "Most recent mission-summary snapshot. Includes vessel name, recovery location and factor, science/funds/reputation totals + earned + modifiers, and per-experiment, per-part, per-resource, per-crew breakdowns. Captures automatically when KSP completes recovery processing (no dialog dismissal needed). Persists across scene changes; cleared on KSP restart.",
-    "units": "UNITLESS",
-    "plotable": false,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "recovery",
-    "returnType": "object",
-    "declaringClass": "RecoveryDialogHandler"
-  },
-  {
     "key": "s.sensor",
     "description": "Sensor Information",
     "units": "UNITLESS",
@@ -5024,6 +4934,17 @@
     "declaringClass": "TechTreeDataLinkHandler"
   },
   {
+    "key": "tech.nodes",
+    "description": "Full tech tree — every node with id, title, description, scienceCost (+ scienceCostEffective post modifier), state, parents, parts (each part includes entryCost + entryCostEffective)",
+    "units": "UNITLESS",
+    "plotable": false,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "career",
+    "returnType": "object",
+    "declaringClass": "TechTreeDataLinkHandler"
+  },
+  {
     "key": "tech.unlock",
     "description": "Unlock a tech-tree node — deducts science, marks node Available",
     "units": "UNITLESS",
@@ -5056,6 +4977,41 @@
     "category": "career",
     "returnType": "int",
     "declaringClass": "TechTreeDataLinkHandler"
+  },
+  {
+    "key": "strategies.all",
+    "description": "Every career strategy with full read fields plus canActivate / canDeactivate gates that work in any scene.",
+    "units": "UNITLESS",
+    "plotable": false,
+    "isAction": false,
+    "alwaysEvaluable": true,
+    "category": "career",
+    "returnType": "object",
+    "declaringClass": "StrategiesDataLinkHandler"
+  },
+  {
+    "key": "strategies.activate",
+    "description": "Activate a strategy by id at a given factor. Works in any scene; KSP's CanBeActivated logic is replicated against public state.",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": true,
+    "alwaysEvaluable": true,
+    "category": "career",
+    "returnType": "object",
+    "params": "string strategyId, float factor",
+    "declaringClass": "StrategiesDataLinkHandler"
+  },
+  {
+    "key": "strategies.deactivate",
+    "description": "Deactivate an active strategy by id. Works in any scene.",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": true,
+    "alwaysEvaluable": true,
+    "category": "career",
+    "returnType": "object",
+    "params": "string strategyId",
+    "declaringClass": "StrategiesDataLinkHandler"
   },
   {
     "key": "therm.anyEnginesOverheating",

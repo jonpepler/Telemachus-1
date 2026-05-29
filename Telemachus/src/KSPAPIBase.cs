@@ -20,9 +20,12 @@ namespace Telemachus
             APIHandlers.Add(new RealChuteDataLinkHandler(formatters));
             APIHandlers.Add(new AstrogatorDataLinkHandler(formatters));
             APIHandlers.Add(new PrincipiaDataLinkHandler(formatters));
+            APIHandlers.Add(new SCANsatDataLinkHandler(formatters));
             APIHandlers.Add(new KerbalismDataLinkHandler(formatters));
             APIHandlers.Add(new LandingDataLinkHandler(formatters));
             APIHandlers.Add(new ThermalDataLinkHandler(formatters));
+            APIHandlers.Add(new PartsTopologyDataLinkHandler(formatters));
+            APIHandlers.Add(new PartStateDataLinkHandler(formatters));
             APIHandlers.Add(new ScienceCareerDataLinkHandler(formatters));
             APIHandlers.Add(new TimeWarpDataLinkHandler(formatters));
             APIHandlers.Add(new TargetDataLinkHandler(formatters));
@@ -35,6 +38,7 @@ namespace Telemachus
             APIHandlers.Add(new ContractsDataLinkHandler(formatters));
             APIHandlers.Add(new LaunchDataLinkHandler(formatters));
             APIHandlers.Add(new ActionGroupBindingsDataLinkHandler(formatters));
+            APIHandlers.Add(new StrategiesDataLinkHandler(formatters));
 
             APIHandlers.Add(new CompoundDataLinkHandler(
                 new List<DataLinkHandler> {

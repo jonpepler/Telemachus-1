@@ -344,6 +344,87 @@ A machine-readable [OpenAPI 3.1 spec](docs/openapi.yaml) is auto-generated from 
 
 </details>
 
+<details><summary>Vessel topology</summary>
+
+Structural snapshot of the active vessel — parts, parent links, modules, and
+assembled-space positions. Cached and event-invalidated, so `v.topology` only
+recomputes when staging / docking / decoupling / part-death events fire.
+Subscribe to `v.topologySeq` and refetch `v.topology` when the seq changes
+rather than streaming the topology key directly.
+
+| Key | Description | Type |
+|-----|-------------|------|
+| `v.topologySeq` | Monotonic counter — bumps on every vessel structural change | int |
+| `v.topology` | `{ topologySeq, rootFlightId, parts: [...] }` (see below) | object |
+
+Each entry in `parts[]`:
+
+| Field | Description |
+|-------|-------------|
+| `flightId` | Stable runtime id within a flight — use for live-lookup keys (`r.resourceFor`, `therm.part`) |
+| `persistentId` | Cross-flight id (survives save/load) |
+| `parentFlightId` | `flightId` of the parent part, or `null` for the root |
+| `name` | Internal part name (e.g. `liquidEngine2`) |
+| `title` | Display name (e.g. "LV-T45 'Swivel' Liquid Fuel Engine") |
+| `manufacturer` | Display manufacturer |
+| `category` | `PartCategories` enum as string |
+| `inverseStage` | Stage at which this part separates |
+| `crewCapacity` | Max crew |
+| `maxTemp` | Internal thermal limit (K) |
+| `crashTolerance` | Impact tolerance |
+| `dryMass` | `Part.mass` |
+| `orgPos` | `[x, y, z]` — vessel-local, as-assembled |
+| `bounds.size` | `{ x, y, z }` — prefab renderer bounds in metres |
+| `bounds.center` | `{ x, y, z }` — prefab renderer bounds centre offset in metres |
+| `up` | `[x, y, z]` — part-local up vector in assembled-space orientation |
+| `fuelLineTarget` | `flightId` of the fuel line's destination part; `null` for non-fuel-line parts |
+| `modules` | Raw `PartModule.moduleName` strings (passthrough, no filtering) |
+
+</details>
+
+<details><summary>Part behavioural state</summary>
+
+Live deployable / activation state for a single part, keyed by `flightID`
+(same id `v.topology` emits). Intended for UI that reflects whether a panel
+is extended, an engine is firing, a parachute is armed, etc. — not for
+high-frequency telemetry.
+
+| Key | Description | Type |
+|-----|-------------|------|
+| `v.partState[flightId]` | `{ seq, modules: [...] }` — see below | object |
+
+The response carries a vessel-level `seq` that bumps whenever the cache is
+invalidated. Consumers can dedup unchanged pushes by comparing `seq` rather
+than walking the modules array.
+
+Each entry in `modules[]` has a `type` (semantic, not the raw KSP module
+name) and a `state` from the standard vocabulary. Type-specific extras
+(e.g. `tracking` on solar panels, `flameout` on engines) are included
+inline when present.
+
+Supported semantic types and their KSP-module sources:
+
+| `type` | Source module | State vocabulary used |
+|---|---|---|
+| `solarPanel` | `ModuleDeployableSolarPanel` | extended / retracted / deploying / retracting / broken — plus `tracking: bool` |
+| `radiator` | `ModuleDeployableRadiator` | extended / retracted / deploying / retracting / broken |
+| `antenna` | `ModuleDeployableAntenna` | extended / retracted / deploying / retracting / broken |
+| `parachute` | `ModuleParachute` | stowed / armed / deploying / extended / broken |
+| `engine` | `ModuleEngines` (incl. `ModuleEnginesFX`) | active / inactive — plus `flameout: true` when out of fuel |
+| `drill` | `ModuleResourceHarvester` | active / inactive |
+| `cargoBay` | `ModuleCargoBay` (paired with `ModuleAnimateGeneric`) | extended / retracted / deploying / retracting |
+| `landingGear` | `ModuleWheels.ModuleWheelDeployment` | extended / retracted / deploying / retracting / broken |
+
+Invalidation hooks: `onStageActivate`, `onVesselWasModified`, `onPartCouple`,
+`onPartUndock`, `onPartDie`, `onPartActionUIDismiss`. A 10s backstop covers
+player interactions that don't fire a global event (right-click → Extend
+Solar Panel, the G key for landing gear, custom action groups). Worst-case
+staleness is therefore ~10 seconds for non-event-triggered transitions —
+mid-animation transitions like "deploying → extended" may also lag up to
+that bound if no other event fires in the interim.
+
+</details>
+
 ### `o.*` — Orbit
 
 <details><summary>Keplerian elements & apsides</summary>
@@ -519,6 +600,7 @@ SAS modes: `StabilityAssist`, `Prograde`, `Retrograde`, `Normal`, `Antinormal`, 
 | `f.abort` | **Action:** trigger abort |
 | `f.ag1` … `f.ag10` | **Action:** custom action groups |
 | `f.stage` | **Action:** activate next stage |
+| `f.ag.bindings` | Flat per-action listing of which parts are bound to each action group on the active vessel. One row per (action, group) pair; unbound actions are omitted. |
 
 </details>
 
@@ -570,8 +652,10 @@ SAS modes: `StabilityAssist`, `Prograde`, `Retrograde`, `Normal`, `Antinormal`, 
 | `tar.o.trueAnomaly` | Target true anomaly (deg) |
 | `tar.o.orbitingBody` | Target reference body |
 | `tar.o.orbitPatches` | Target orbit patches |
+| `tar.availableVessels` | Array of targetable vessels — `[{ index, name, type, situation, body, position }, …]` |
 | `tar.setTargetBody[index]` | **Action:** set target to body |
-| `tar.setTargetVessel[index]` | **Action:** set target to vessel |
+| `tar.setTargetVessel[index]` | **Action:** set target to vessel (use `tar.availableVessels` to get `index`) |
+| `tar.switchVessel[index]` | **Action:** fly to vessel by `index` — same as Tracking Station "Fly" |
 | `tar.clearTarget` | **Action:** clear target |
 
 </details>
@@ -680,8 +764,9 @@ All body queries take a body index parameter: `b.name[0]` (Kerbol), `b.name[1]` 
 | `r.resourceCurrent[name]` | Resource amount in current stage |
 | `r.resourceCurrentMax[name]` | Resource max in current stage |
 | `r.resourceNameList` | List of all resource names |
+| `r.resourceFor[flightId]` | Live resources for a single part — `{ resourceName: { amount, maxAmount }, … }`; empty object if the flightId isn't found |
 
-Example: `r.resource[ElectricCharge]`, `r.resource[LiquidFuel]`, `r.resource[Oxidizer]`
+Example: `r.resource[ElectricCharge]`, `r.resource[LiquidFuel]`, `r.resource[Oxidizer]`, `r.resourceFor[12345]`
 
 ### `s.*` — Sensors
 
@@ -771,10 +856,11 @@ Snapshot keys captured from `GameEvents` — readable from any scene (including 
 
 ### `tech.*` — Tech tree
 
-All `AlwaysEvaluable` — queryable from any scene.
+Callable from any game scene.
 
 | Key | Description |
 |-----|-------------|
+| `tech.nodes` | Full tech tree — every node with its title, description, science cost, prerequisites, state (Available / Researchable / Unavailable), and the parts it unlocks. Costs include both nominal and strategy-modified effective values. See the OpenAPI schema for field detail. |
 | `tech.unlockedIds` | All currently unlocked node IDs |
 | `tech.unlockedPartCount` | Count of unlocked parts |
 | `tech.affordable` | Unpurchased nodes affordable right now (with cost / scienceRequired) |
@@ -784,13 +870,13 @@ All `AlwaysEvaluable` — queryable from any scene.
 
 | Key | Description |
 |-----|-------------|
-| `kc.scene` | Current scene name (`SPACECENTER`, `FLIGHT`, `EDITOR`, `TRACKSTATION`, …) |
-| `kc.facilityLevels` | All ScenarioUpgradeableFacilities with current + max upgrade levels |
+| `kc.scene` | Current scene name (`SPACECENTER`, `FLIGHT`, `EDITOR`, or `TRACKSTATION`) |
+| `kc.facilityLevels` | All Space Center facilities — current level, max level, upgrade cost (nominal and strategy-modified), and the multi-line descriptions KSP shows in its upgrade dialog |
 | `kc.launchSite` | Active launch site (`LaunchPad` / `Runway`) |
 | `kc.padOccupied` / `kc.padVesselTitle` | Pad state |
 | `kc.partsAvailable` | All purchasable parts with their availability + cost |
-| `kc.savedShips` | Saved craft listing per facility |
-| `kc.crewRoster` | Full kerbal roster with courage / stupidity / badass / veteran / gender / type / experience / careerFlights / careerEntries / currentVesselId / currentVesselName |
+| `kc.savedShips` | Saved craft per facility — name, part count, mass, rollout cost (nominal and strategy-modified), and any missing-part references |
+| `kc.crewRoster` | Full kerbal roster — name, stats, experience, and current assignment |
 | `kc.upgradeFacility[facilityName]` | **Action:** start a facility upgrade; deducts funds |
 
 ### `sci.*` — Science
@@ -832,10 +918,6 @@ All `AlwaysEvaluable` action keys for launch / recovery / revert / scene transit
 | `ksp.revertToEditor[vab\|sph]` | **Action:** revert to the editor scene (Flight only) |
 | `ksp.toSpaceCenter` / `ksp.toTrackingStation` | **Action:** switch scenes |
 | `ksp.canRevert` / `ksp.canRevertToLaunch` / `ksp.canRevertToEditor` | Whether the corresponding revert path is available (mirrors `FlightDriver.CanRevert*`) |
-
-### Action group bindings
-
-`f.ag.bindings` — flat per-action list of action-group bindings on the active vessel: `{ actionGroup, partId, partName, partTitle, moduleName, actionName, actionGuiName }`. One row per (action, group) pair (an action bound to two groups emits two rows; actions with no group are omitted).
 
 ### Camera API
 
@@ -1107,23 +1189,36 @@ Each burn object contains `{ tangent, normal, binormal, initial_time, duration }
 | `therm.heatShieldTemp` | Heat shield temperature | K |
 | `therm.heatShieldTempCelsius` | Heat shield temperature | C |
 | `therm.heatShieldFlux` | Heat shield thermal flux | kW |
+| `therm.part[flightId]` | Per-part thermal state — `{ temperature, maxTemperature, temperatureK, maxTemperatureK }`; `null` if the flightId isn't found. Core part temperature only — skin temp not exposed | object |
 
-### `sci.*` / `career.*` / `comm.*` — Science, career & comms *(WIP — in testing)*
+### `career.*` — Career mode
 
 | Key | Description |
 |-----|-------------|
-| `sci.count` | Number of science experiments aboard |
-| `sci.dataAmount` | Total science data aboard |
-| `sci.experiments` | Experiments with data (object) |
 | `career.funds` | Available funds |
 | `career.reputation` | Current reputation |
 | `career.science` | Available science points |
 | `career.mode` | Game mode (CAREER / SCIENCE / SANDBOX) |
+
+### `comm.*` — CommNet
+
+| Key | Description |
+|-----|-------------|
 | `comm.connected` | CommNet is connected |
 | `comm.signalStrength` | CommNet signal strength (0–1) |
 | `comm.controlState` | CommNet control state (0=none, 1=partial, 2=full) |
 | `comm.controlStateName` | CommNet control state name |
 | `comm.signalDelay` | CommNet signal delay (s) |
+
+### `strategies.*` — Administration Building strategies
+
+Callable from any game scene — the activate / deactivate path replicates KSP's eligibility checks against live state, so the Admin Building dialog does not need to be open.
+
+| Key | Description |
+|-----|-------------|
+| `strategies.all` | All career strategies (active and inactive) with title, description, department, current activation state, costs (nominal and strategy-modified), reputation requirements, factor-slider info, and pre-computed `canActivate` / `canDeactivate` flags with human-readable blocked reasons |
+| `strategies.activate[id, factor]` | **Action:** activate a strategy at the given commitment factor (0–1). Returns `0` on success, error string otherwise. |
+| `strategies.deactivate[id]` | **Action:** deactivate an active strategy. Returns `0` on success, error string otherwise. |
 
 ---
 
