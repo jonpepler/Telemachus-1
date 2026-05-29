@@ -39,7 +39,8 @@
     "alwaysEvaluable": true,
     "category": "system",
     "returnType": "object",
-    "declaringClass": "APIDataLinkHandler"
+    "declaringClass": "APIDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/SystemHandlers.cs"
   },
   {
     "key": "a.physicsMode",
@@ -50,7 +51,8 @@
     "alwaysEvaluable": true,
     "category": "system",
     "returnType": "string",
-    "declaringClass": "APIDataLinkHandler"
+    "declaringClass": "APIDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/SystemHandlers.cs"
   },
   {
     "key": "a.schema",
@@ -61,7 +63,8 @@
     "alwaysEvaluable": true,
     "category": "system",
     "returnType": "object",
-    "declaringClass": "APIDataLinkHandler"
+    "declaringClass": "APIDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/SystemHandlers.cs"
   },
   {
     "key": "a.version",
@@ -72,19 +75,8 @@
     "alwaysEvaluable": true,
     "category": "system",
     "returnType": "string",
-    "declaringClass": "APIDataLinkHandler"
-  },
-  {
-    "key": "alarm.add",
-    "description": "Create a stock-clock alarm. Args: title, ut, [warpAction], [message]. warpAction = DoNothing | KillWarp | PauseGame (default KillWarp). message = No | Yes | YesIfOtherVessel (default Yes). Returns the new alarm's id (uint), or an error string.",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "alarm",
-    "returnType": "object",
-    "params": "string title, double ut, string warpAction, string message",
-    "declaringClass": "AlarmClockDataLinkHandler"
+    "declaringClass": "APIDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/SystemHandlers.cs"
   },
   {
     "key": "alarm.count",
@@ -92,22 +84,11 @@
     "units": "UNITLESS",
     "plotable": true,
     "isAction": false,
-    "alwaysEvaluable": true,
+    "alwaysEvaluable": false,
     "category": "alarm",
     "returnType": "int",
-    "declaringClass": "AlarmClockDataLinkHandler"
-  },
-  {
-    "key": "alarm.delete",
-    "description": "Remove a stock-clock alarm by id. Args: id. Returns true if the alarm was found and queued for removal, false if no alarm with that id exists right now.",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "alarm",
-    "returnType": "bool",
-    "params": "uint id",
-    "declaringClass": "AlarmClockDataLinkHandler"
+    "declaringClass": "AlarmClockDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/AlarmClockHandlers.cs"
   },
   {
     "key": "alarm.list",
@@ -115,11 +96,12 @@
     "units": "UNITLESS",
     "plotable": false,
     "isAction": false,
-    "alwaysEvaluable": true,
+    "alwaysEvaluable": false,
     "category": "alarm",
     "returnType": "object",
     "formatter": "AlarmList",
-    "declaringClass": "AlarmClockDataLinkHandler"
+    "declaringClass": "AlarmClockDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/AlarmClockHandlers.cs"
   },
   {
     "key": "alarm.nextAlarm",
@@ -127,11 +109,12 @@
     "units": "UNITLESS",
     "plotable": false,
     "isAction": false,
-    "alwaysEvaluable": true,
+    "alwaysEvaluable": false,
     "category": "alarm",
     "returnType": "object",
     "formatter": "Alarm",
-    "declaringClass": "AlarmClockDataLinkHandler"
+    "declaringClass": "AlarmClockDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/AlarmClockHandlers.cs"
   },
   {
     "key": "alarm.timeToNext",
@@ -139,10 +122,11 @@
     "units": "TIME",
     "plotable": true,
     "isAction": false,
-    "alwaysEvaluable": true,
+    "alwaysEvaluable": false,
     "category": "alarm",
     "returnType": "double",
-    "declaringClass": "AlarmClockDataLinkHandler"
+    "declaringClass": "AlarmClockDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/AlarmClockHandlers.cs"
   },
   {
     "key": "astg.active",
@@ -151,7 +135,8 @@
     "plotable": true,
     "isAction": false,
     "alwaysEvaluable": false,
-    "declaringClass": "AstrogatorDataLinkHandler"
+    "declaringClass": "AstrogatorDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/AstrogatorDataLinkHandler.cs"
   },
   {
     "key": "astg.activeTransfer",
@@ -160,7 +145,8 @@
     "plotable": false,
     "isAction": false,
     "alwaysEvaluable": false,
-    "declaringClass": "AstrogatorDataLinkHandler"
+    "declaringClass": "AstrogatorDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/AstrogatorDataLinkHandler.cs"
   },
   {
     "key": "astg.available",
@@ -169,7 +155,8 @@
     "plotable": true,
     "isAction": false,
     "alwaysEvaluable": true,
-    "declaringClass": "AstrogatorDataLinkHandler"
+    "declaringClass": "AstrogatorDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/AstrogatorDataLinkHandler.cs"
   },
   {
     "key": "astg.createManeuver",
@@ -178,7 +165,8 @@
     "plotable": true,
     "isAction": true,
     "alwaysEvaluable": false,
-    "declaringClass": "AstrogatorDataLinkHandler"
+    "declaringClass": "AstrogatorDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/AstrogatorDataLinkHandler.cs"
   },
   {
     "key": "astg.errorCondition",
@@ -187,7 +175,8 @@
     "plotable": true,
     "isAction": false,
     "alwaysEvaluable": false,
-    "declaringClass": "AstrogatorDataLinkHandler"
+    "declaringClass": "AstrogatorDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/AstrogatorDataLinkHandler.cs"
   },
   {
     "key": "astg.hyperbolicOrbit",
@@ -196,7 +185,8 @@
     "plotable": true,
     "isAction": false,
     "alwaysEvaluable": false,
-    "declaringClass": "AstrogatorDataLinkHandler"
+    "declaringClass": "AstrogatorDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/AstrogatorDataLinkHandler.cs"
   },
   {
     "key": "astg.nextBurnCountdown",
@@ -205,7 +195,8 @@
     "plotable": true,
     "isAction": false,
     "alwaysEvaluable": false,
-    "declaringClass": "AstrogatorDataLinkHandler"
+    "declaringClass": "AstrogatorDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/AstrogatorDataLinkHandler.cs"
   },
   {
     "key": "astg.nextBurnTime",
@@ -214,7 +205,8 @@
     "plotable": true,
     "isAction": false,
     "alwaysEvaluable": false,
-    "declaringClass": "AstrogatorDataLinkHandler"
+    "declaringClass": "AstrogatorDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/AstrogatorDataLinkHandler.cs"
   },
   {
     "key": "astg.nextDeltaV",
@@ -223,7 +215,8 @@
     "plotable": true,
     "isAction": false,
     "alwaysEvaluable": false,
-    "declaringClass": "AstrogatorDataLinkHandler"
+    "declaringClass": "AstrogatorDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/AstrogatorDataLinkHandler.cs"
   },
   {
     "key": "astg.nextDestination",
@@ -232,7 +225,8 @@
     "plotable": true,
     "isAction": false,
     "alwaysEvaluable": false,
-    "declaringClass": "AstrogatorDataLinkHandler"
+    "declaringClass": "AstrogatorDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/AstrogatorDataLinkHandler.cs"
   },
   {
     "key": "astg.retrogradeOrbit",
@@ -241,7 +235,8 @@
     "plotable": true,
     "isAction": false,
     "alwaysEvaluable": false,
-    "declaringClass": "AstrogatorDataLinkHandler"
+    "declaringClass": "AstrogatorDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/AstrogatorDataLinkHandler.cs"
   },
   {
     "key": "astg.transfer",
@@ -250,7 +245,8 @@
     "plotable": false,
     "isAction": false,
     "alwaysEvaluable": false,
-    "declaringClass": "AstrogatorDataLinkHandler"
+    "declaringClass": "AstrogatorDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/AstrogatorDataLinkHandler.cs"
   },
   {
     "key": "astg.transferCount",
@@ -259,7 +255,8 @@
     "plotable": true,
     "isAction": false,
     "alwaysEvaluable": false,
-    "declaringClass": "AstrogatorDataLinkHandler"
+    "declaringClass": "AstrogatorDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/AstrogatorDataLinkHandler.cs"
   },
   {
     "key": "astg.transfers",
@@ -268,7 +265,8 @@
     "plotable": false,
     "isAction": false,
     "alwaysEvaluable": false,
-    "declaringClass": "AstrogatorDataLinkHandler"
+    "declaringClass": "AstrogatorDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/AstrogatorDataLinkHandler.cs"
   },
   {
     "key": "astg.warpToBurn",
@@ -277,7 +275,8 @@
     "plotable": true,
     "isAction": true,
     "alwaysEvaluable": false,
-    "declaringClass": "AstrogatorDataLinkHandler"
+    "declaringClass": "AstrogatorDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/AstrogatorDataLinkHandler.cs"
   },
   {
     "key": "b.angularV",
@@ -289,7 +288,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.atmosphere",
@@ -301,7 +301,8 @@
     "category": "body",
     "returnType": "bool",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.atmosphereContainsOxygen",
@@ -313,7 +314,8 @@
     "category": "body",
     "returnType": "bool",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.description",
@@ -325,7 +327,8 @@
     "category": "body",
     "returnType": "string",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.geeASL",
@@ -337,7 +340,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.hillSphere",
@@ -349,7 +353,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.index",
@@ -361,7 +366,8 @@
     "category": "body",
     "returnType": "int",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.mass",
@@ -373,7 +379,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.maxAtmosphere",
@@ -385,7 +392,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.name",
@@ -397,7 +405,8 @@
     "category": "body",
     "returnType": "string",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.number",
@@ -408,7 +417,8 @@
     "alwaysEvaluable": false,
     "category": "body",
     "returnType": "int",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.o.ApA",
@@ -420,7 +430,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.o.argumentOfPeriapsis",
@@ -432,7 +443,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.o.eccentricity",
@@ -444,7 +456,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.o.gravParameter",
@@ -456,7 +469,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.o.inclination",
@@ -468,7 +482,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.o.lan",
@@ -480,7 +495,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.o.maae",
@@ -492,7 +508,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.o.PeA",
@@ -504,7 +521,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.o.period",
@@ -516,7 +534,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.o.phaseAngle",
@@ -528,7 +547,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.o.relativeVelocity",
@@ -540,7 +560,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.o.sma",
@@ -552,7 +573,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.o.timeOfPeriapsisPassage",
@@ -564,7 +586,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.o.timeToAp",
@@ -576,7 +599,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.o.timeToPe",
@@ -588,7 +612,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.o.timeToTransition1",
@@ -600,7 +625,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.o.timeToTransition2",
@@ -612,7 +638,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.o.trueAnomaly",
@@ -624,7 +651,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.o.truePositionAtUT",
@@ -637,7 +665,8 @@
     "returnType": "Vector3d",
     "params": "int bodyId, double UT",
     "formatter": "Vector3d",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.ocean",
@@ -649,7 +678,8 @@
     "category": "body",
     "returnType": "bool",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.orbitingBodies",
@@ -662,7 +692,8 @@
     "returnType": "string[]",
     "params": "int bodyId",
     "formatter": "StringArray",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.position",
@@ -675,7 +706,8 @@
     "returnType": "Vector3d",
     "params": "int bodyId",
     "formatter": "Vector3d",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.radius",
@@ -687,7 +719,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.referenceBody",
@@ -699,7 +732,8 @@
     "category": "body",
     "returnType": "string",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.rotates",
@@ -711,7 +745,8 @@
     "category": "body",
     "returnType": "bool",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.rotationAngle",
@@ -723,7 +758,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.rotationPeriod",
@@ -735,7 +771,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.soi",
@@ -747,7 +784,8 @@
     "category": "body",
     "returnType": "double",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.tidallyLocked",
@@ -759,7 +797,8 @@
     "category": "body",
     "returnType": "bool",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "b.timeWarpAltitudeLimits",
@@ -771,7 +810,8 @@
     "category": "body",
     "returnType": "object",
     "params": "int bodyId",
-    "declaringClass": "BodyDataLinkHandler"
+    "declaringClass": "BodyDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "career.funds",
@@ -782,7 +822,8 @@
     "alwaysEvaluable": true,
     "category": "career",
     "returnType": "double",
-    "declaringClass": "ScienceCareerDataLinkHandler"
+    "declaringClass": "ScienceCareerDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ScienceCareerDataLinkHandler.cs"
   },
   {
     "key": "career.mode",
@@ -793,7 +834,8 @@
     "alwaysEvaluable": true,
     "category": "career",
     "returnType": "string",
-    "declaringClass": "ScienceCareerDataLinkHandler"
+    "declaringClass": "ScienceCareerDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ScienceCareerDataLinkHandler.cs"
   },
   {
     "key": "career.reputation",
@@ -804,7 +846,8 @@
     "alwaysEvaluable": true,
     "category": "career",
     "returnType": "double",
-    "declaringClass": "ScienceCareerDataLinkHandler"
+    "declaringClass": "ScienceCareerDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ScienceCareerDataLinkHandler.cs"
   },
   {
     "key": "career.science",
@@ -815,7 +858,8 @@
     "alwaysEvaluable": true,
     "category": "career",
     "returnType": "double",
-    "declaringClass": "ScienceCareerDataLinkHandler"
+    "declaringClass": "ScienceCareerDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ScienceCareerDataLinkHandler.cs"
   },
   {
     "key": "comm.connected",
@@ -826,7 +870,8 @@
     "alwaysEvaluable": false,
     "category": "comms",
     "returnType": "bool",
-    "declaringClass": "ScienceCareerDataLinkHandler"
+    "declaringClass": "ScienceCareerDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ScienceCareerDataLinkHandler.cs"
   },
   {
     "key": "comm.controlState",
@@ -837,7 +882,8 @@
     "alwaysEvaluable": false,
     "category": "comms",
     "returnType": "int",
-    "declaringClass": "ScienceCareerDataLinkHandler"
+    "declaringClass": "ScienceCareerDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ScienceCareerDataLinkHandler.cs"
   },
   {
     "key": "comm.controlStateName",
@@ -848,7 +894,8 @@
     "alwaysEvaluable": false,
     "category": "comms",
     "returnType": "string",
-    "declaringClass": "ScienceCareerDataLinkHandler"
+    "declaringClass": "ScienceCareerDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ScienceCareerDataLinkHandler.cs"
   },
   {
     "key": "comm.signalDelay",
@@ -859,7 +906,8 @@
     "alwaysEvaluable": false,
     "category": "comms",
     "returnType": "double",
-    "declaringClass": "ScienceCareerDataLinkHandler"
+    "declaringClass": "ScienceCareerDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ScienceCareerDataLinkHandler.cs"
   },
   {
     "key": "comm.signalStrength",
@@ -870,98 +918,8 @@
     "alwaysEvaluable": false,
     "category": "comms",
     "returnType": "double",
-    "declaringClass": "ScienceCareerDataLinkHandler"
-  },
-  {
-    "key": "contracts.accept",
-    "description": "Accept an Offered contract (moves to Active)",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": true,
-    "alwaysEvaluable": true,
-    "category": "career",
-    "returnType": "object",
-    "params": "long contractId",
-    "declaringClass": "ContractsDataLinkHandler"
-  },
-  {
-    "key": "contracts.active",
-    "description": "All Active contracts with parameters + reward shape",
-    "units": "UNITLESS",
-    "plotable": false,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "career",
-    "returnType": "object",
-    "declaringClass": "ContractsDataLinkHandler"
-  },
-  {
-    "key": "contracts.cancel",
-    "description": "Cancel an Active contract — forfeits work in progress; only valid for Active",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": true,
-    "alwaysEvaluable": true,
-    "category": "career",
-    "returnType": "object",
-    "params": "long contractId",
-    "declaringClass": "ContractsDataLinkHandler"
-  },
-  {
-    "key": "contracts.completedRecent",
-    "description": "Last N completed-or-failed contracts, newest-first",
-    "units": "UNITLESS",
-    "plotable": false,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "career",
-    "returnType": "object",
-    "declaringClass": "ContractsDataLinkHandler"
-  },
-  {
-    "key": "contracts.decline",
-    "description": "Decline an Offered contract — different verb from cancel; only valid for Offered",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": true,
-    "alwaysEvaluable": true,
-    "category": "career",
-    "returnType": "object",
-    "params": "long contractId",
-    "declaringClass": "ContractsDataLinkHandler"
-  },
-  {
-    "key": "contracts.offered",
-    "description": "Contracts in Mission Control awaiting accept",
-    "units": "UNITLESS",
-    "plotable": false,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "career",
-    "returnType": "object",
-    "declaringClass": "ContractsDataLinkHandler"
-  },
-  {
-    "key": "crash.hasRecent",
-    "description": "Whether a crash snapshot has been captured this session.",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "crash",
-    "returnType": "bool",
-    "declaringClass": "CrashDataHandler"
-  },
-  {
-    "key": "crash.lastCrash",
-    "description": "Most recent crash snapshot. Fields: vesselName, vesselId, body, situation, latitude, longitude, altitude, ut, what (what was hit), msg, eventKind (Crash/CrashSplashdown), partsLost (list of {partName, partTitle, partId, msg}), crewAboard (names), kerbalsKilled (names). Per-vessel events within 5 seconds coalesce into one snapshot; later vessels or later windows start fresh. Persists across scene changes; cleared on KSP restart.",
-    "units": "UNITLESS",
-    "plotable": false,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "crash",
-    "returnType": "object",
-    "declaringClass": "CrashDataHandler"
+    "declaringClass": "ScienceCareerDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ScienceCareerDataLinkHandler.cs"
   },
   {
     "key": "dock.ax",
@@ -972,7 +930,8 @@
     "alwaysEvaluable": false,
     "category": "docking",
     "returnType": "double",
-    "declaringClass": "DockingDataLinkHandler"
+    "declaringClass": "DockingDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "dock.ay",
@@ -983,7 +942,8 @@
     "alwaysEvaluable": false,
     "category": "docking",
     "returnType": "double",
-    "declaringClass": "DockingDataLinkHandler"
+    "declaringClass": "DockingDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "dock.az",
@@ -994,7 +954,8 @@
     "alwaysEvaluable": false,
     "category": "docking",
     "returnType": "double",
-    "declaringClass": "DockingDataLinkHandler"
+    "declaringClass": "DockingDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "dock.x",
@@ -1005,7 +966,8 @@
     "alwaysEvaluable": false,
     "category": "docking",
     "returnType": "double",
-    "declaringClass": "DockingDataLinkHandler"
+    "declaringClass": "DockingDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "dock.y",
@@ -1016,7 +978,8 @@
     "alwaysEvaluable": false,
     "category": "docking",
     "returnType": "double",
-    "declaringClass": "DockingDataLinkHandler"
+    "declaringClass": "DockingDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "dv.ready",
@@ -1027,7 +990,8 @@
     "alwaysEvaluable": false,
     "category": "deltav",
     "returnType": "double",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stage",
@@ -1040,7 +1004,8 @@
     "returnType": "object",
     "params": "int stage",
     "formatter": "DeltaVStageInfo",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stageBurnTime",
@@ -1052,7 +1017,8 @@
     "category": "deltav",
     "returnType": "double",
     "params": "int stage",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stageCount",
@@ -1063,7 +1029,8 @@
     "alwaysEvaluable": false,
     "category": "deltav",
     "returnType": "int",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stageDryMass",
@@ -1075,7 +1042,8 @@
     "category": "deltav",
     "returnType": "double",
     "params": "int stage",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stageDVActual",
@@ -1087,7 +1055,8 @@
     "category": "deltav",
     "returnType": "double",
     "params": "int stage",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stageDVASL",
@@ -1099,7 +1068,8 @@
     "category": "deltav",
     "returnType": "double",
     "params": "int stage",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stageDVVac",
@@ -1111,7 +1081,8 @@
     "category": "deltav",
     "returnType": "double",
     "params": "int stage",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stageEndMass",
@@ -1123,7 +1094,8 @@
     "category": "deltav",
     "returnType": "double",
     "params": "int stage",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stageFuelMass",
@@ -1135,7 +1107,8 @@
     "category": "deltav",
     "returnType": "double",
     "params": "int stage",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stageISPActual",
@@ -1147,7 +1120,8 @@
     "category": "deltav",
     "returnType": "double",
     "params": "int stage",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stageISPASL",
@@ -1159,7 +1133,8 @@
     "category": "deltav",
     "returnType": "double",
     "params": "int stage",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stageISPVac",
@@ -1171,7 +1146,8 @@
     "category": "deltav",
     "returnType": "double",
     "params": "int stage",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stageMass",
@@ -1183,7 +1159,8 @@
     "category": "deltav",
     "returnType": "double",
     "params": "int stage",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stages",
@@ -1195,7 +1172,8 @@
     "category": "deltav",
     "returnType": "object",
     "formatter": "DeltaVStageInfoList",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stageStartMass",
@@ -1207,7 +1185,8 @@
     "category": "deltav",
     "returnType": "double",
     "params": "int stage",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stageThrustActual",
@@ -1219,7 +1198,8 @@
     "category": "deltav",
     "returnType": "double",
     "params": "int stage",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stageThrustASL",
@@ -1231,7 +1211,8 @@
     "category": "deltav",
     "returnType": "double",
     "params": "int stage",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stageThrustVac",
@@ -1243,7 +1224,8 @@
     "category": "deltav",
     "returnType": "double",
     "params": "int stage",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stageTWRActual",
@@ -1255,7 +1237,8 @@
     "category": "deltav",
     "returnType": "double",
     "params": "int stage",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stageTWRASL",
@@ -1267,7 +1250,8 @@
     "category": "deltav",
     "returnType": "double",
     "params": "int stage",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.stageTWRVac",
@@ -1279,7 +1263,8 @@
     "category": "deltav",
     "returnType": "double",
     "params": "int stage",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.totalBurnTime",
@@ -1290,7 +1275,8 @@
     "alwaysEvaluable": false,
     "category": "deltav",
     "returnType": "double",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.totalDVActual",
@@ -1301,7 +1287,8 @@
     "alwaysEvaluable": false,
     "category": "deltav",
     "returnType": "double",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.totalDVASL",
@@ -1312,7 +1299,8 @@
     "alwaysEvaluable": false,
     "category": "deltav",
     "returnType": "double",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "dv.totalDVVac",
@@ -1323,7 +1311,8 @@
     "alwaysEvaluable": false,
     "category": "deltav",
     "returnType": "double",
-    "declaringClass": "DeltaVDataLinkHandler"
+    "declaringClass": "DeltaVDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/DeltaVHandlers.cs"
   },
   {
     "key": "f.abort",
@@ -1334,17 +1323,6 @@
     "category": "flight",
     "returnType": "int",
     "params": "bool? onOff"
-  },
-  {
-    "key": "f.ag.bindings",
-    "description": "Per-action flat list of action-group bindings on the active vessel: { actionGroup, partId, partName, partTitle, moduleName, actionName, actionGuiName }. One row per (action, group) pair — an action bound to two groups emits two rows. Actions with no group (None) are omitted.",
-    "units": "UNITLESS",
-    "plotable": false,
-    "isAction": false,
-    "alwaysEvaluable": false,
-    "category": "control",
-    "returnType": "object",
-    "declaringClass": "ActionGroupBindingsDataLinkHandler"
   },
   {
     "key": "f.ag1",
@@ -1475,7 +1453,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "bool",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "f.killRot",
@@ -1486,7 +1465,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "bool",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "f.light",
@@ -1507,7 +1487,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "double",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "f.pitchTrim",
@@ -1518,7 +1499,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "double",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "f.precisionControl",
@@ -1549,7 +1531,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "double",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "f.rollTrim",
@@ -1560,7 +1543,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "double",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "f.sas",
@@ -1581,7 +1565,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "bool",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "f.sasMode",
@@ -1592,7 +1577,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "string",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "f.setPitchTrim",
@@ -1604,7 +1590,8 @@
     "category": "flight",
     "returnType": "int",
     "params": "float trim",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "f.setRollTrim",
@@ -1616,7 +1603,8 @@
     "category": "flight",
     "returnType": "int",
     "params": "float trim",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "f.setSASMode",
@@ -1628,7 +1616,8 @@
     "category": "flight",
     "returnType": "string",
     "params": "string mode",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "f.setThrottle",
@@ -1650,7 +1639,8 @@
     "category": "flight",
     "returnType": "int",
     "params": "float trim",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "f.stage",
@@ -1670,7 +1660,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "double",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "f.throttleDown",
@@ -1717,7 +1708,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "double",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "f.yawInput",
@@ -1728,7 +1720,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "double",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "f.yawTrim",
@@ -1739,7 +1732,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "double",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "f.yInput",
@@ -1750,7 +1744,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "double",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "f.zInput",
@@ -1761,7 +1756,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "double",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "far.aoa",
@@ -1773,7 +1769,8 @@
     "category": "far",
     "returnType": "double",
     "requiresMod": "far",
-    "declaringClass": "FARDataLinkHandler"
+    "declaringClass": "FARDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FARDataLinkHandler.cs"
   },
   {
     "key": "far.available",
@@ -1785,7 +1782,8 @@
     "category": "far",
     "returnType": "bool",
     "requiresMod": "far",
-    "declaringClass": "FARDataLinkHandler"
+    "declaringClass": "FARDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FARDataLinkHandler.cs"
   },
   {
     "key": "far.ballisticCoeff",
@@ -1797,7 +1795,8 @@
     "category": "far",
     "returnType": "double",
     "requiresMod": "far",
-    "declaringClass": "FARDataLinkHandler"
+    "declaringClass": "FARDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FARDataLinkHandler.cs"
   },
   {
     "key": "far.decreaseFlaps",
@@ -1809,7 +1808,8 @@
     "category": "far",
     "returnType": "bool",
     "requiresMod": "far",
-    "declaringClass": "FARDataLinkHandler"
+    "declaringClass": "FARDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FARDataLinkHandler.cs"
   },
   {
     "key": "far.dragCoeff",
@@ -1821,7 +1821,8 @@
     "category": "far",
     "returnType": "double",
     "requiresMod": "far",
-    "declaringClass": "FARDataLinkHandler"
+    "declaringClass": "FARDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FARDataLinkHandler.cs"
   },
   {
     "key": "far.dynPres",
@@ -1833,7 +1834,8 @@
     "category": "far",
     "returnType": "double",
     "requiresMod": "far",
-    "declaringClass": "FARDataLinkHandler"
+    "declaringClass": "FARDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FARDataLinkHandler.cs"
   },
   {
     "key": "far.flapSetting",
@@ -1845,7 +1847,8 @@
     "category": "far",
     "returnType": "int",
     "requiresMod": "far",
-    "declaringClass": "FARDataLinkHandler"
+    "declaringClass": "FARDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FARDataLinkHandler.cs"
   },
   {
     "key": "far.increaseFlaps",
@@ -1857,7 +1860,8 @@
     "category": "far",
     "returnType": "bool",
     "requiresMod": "far",
-    "declaringClass": "FARDataLinkHandler"
+    "declaringClass": "FARDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FARDataLinkHandler.cs"
   },
   {
     "key": "far.liftCoeff",
@@ -1869,7 +1873,8 @@
     "category": "far",
     "returnType": "double",
     "requiresMod": "far",
-    "declaringClass": "FARDataLinkHandler"
+    "declaringClass": "FARDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FARDataLinkHandler.cs"
   },
   {
     "key": "far.refArea",
@@ -1881,7 +1886,8 @@
     "category": "far",
     "returnType": "double",
     "requiresMod": "far",
-    "declaringClass": "FARDataLinkHandler"
+    "declaringClass": "FARDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FARDataLinkHandler.cs"
   },
   {
     "key": "far.setSpoilers",
@@ -1894,7 +1900,8 @@
     "returnType": "bool",
     "params": "bool active",
     "requiresMod": "far",
-    "declaringClass": "FARDataLinkHandler"
+    "declaringClass": "FARDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FARDataLinkHandler.cs"
   },
   {
     "key": "far.sideslip",
@@ -1906,7 +1913,8 @@
     "category": "far",
     "returnType": "double",
     "requiresMod": "far",
-    "declaringClass": "FARDataLinkHandler"
+    "declaringClass": "FARDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FARDataLinkHandler.cs"
   },
   {
     "key": "far.spoiler",
@@ -1918,7 +1926,8 @@
     "category": "far",
     "returnType": "bool",
     "requiresMod": "far",
-    "declaringClass": "FARDataLinkHandler"
+    "declaringClass": "FARDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FARDataLinkHandler.cs"
   },
   {
     "key": "far.stallFrac",
@@ -1930,7 +1939,8 @@
     "category": "far",
     "returnType": "double",
     "requiresMod": "far",
-    "declaringClass": "FARDataLinkHandler"
+    "declaringClass": "FARDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FARDataLinkHandler.cs"
   },
   {
     "key": "far.termVel",
@@ -1942,7 +1952,8 @@
     "category": "far",
     "returnType": "double",
     "requiresMod": "far",
-    "declaringClass": "FARDataLinkHandler"
+    "declaringClass": "FARDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FARDataLinkHandler.cs"
   },
   {
     "key": "far.tsfc",
@@ -1954,7 +1965,8 @@
     "category": "far",
     "returnType": "double",
     "requiresMod": "far",
-    "declaringClass": "FARDataLinkHandler"
+    "declaringClass": "FARDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FARDataLinkHandler.cs"
   },
   {
     "key": "far.voxelized",
@@ -1966,129 +1978,8 @@
     "category": "far",
     "returnType": "bool",
     "requiresMod": "far",
-    "declaringClass": "FARDataLinkHandler"
-  },
-  {
-    "key": "flight.achievements",
-    "description": "Running mission stats from KSP's FlightLogger — same data the Flight Results dialog renders in the Flight Achievements panel. Fields: missionTime, liftOff, highestAltitude, highestSpeed, highestSpeedOverLand, groundDistance, totalDistance, highestGee, partsLost (count), kerbalsKilled (count), missionEnd, flightEndMode. Returns null outside flight.",
-    "units": "UNITLESS",
-    "plotable": false,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "flight",
-    "returnType": "object",
-    "declaringClass": "FlightLogHandler"
-  },
-  {
-    "key": "flight.events",
-    "description": "Pre-formatted event timeline from KSP's FlightLogger — the same strings the in-game Flight Results dialog renders in the Flight Events panel. Empty list outside flight.",
-    "units": "UNITLESS",
-    "plotable": false,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "flight",
-    "returnType": "object",
-    "declaringClass": "FlightLogHandler"
-  },
-  {
-    "key": "kc.crewRoster",
-    "description": "Whole-program kerbal roster — name, trait, type, gender, experience, experienceLevel, courage, stupidity, isBadass, veteran, careerFlights, careerEntries, currentVesselId, currentVesselName, available, unavailableReason",
-    "units": "UNITLESS",
-    "plotable": false,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "ksc",
-    "returnType": "object",
-    "declaringClass": "KscDataLinkHandler"
-  },
-  {
-    "key": "kc.facilityLevels",
-    "description": "Per-facility { level, max, upgradeFunds } for the 9 stock SC buildings",
-    "units": "UNITLESS",
-    "plotable": false,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "ksc",
-    "returnType": "object",
-    "declaringClass": "KscDataLinkHandler"
-  },
-  {
-    "key": "kc.launchSite",
-    "description": "Active flight's launch site name",
-    "units": "STRING",
-    "plotable": true,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "ksc",
-    "returnType": "string",
-    "declaringClass": "KscDataLinkHandler"
-  },
-  {
-    "key": "kc.padOccupied",
-    "description": "True iff the active vessel is in PRELAUNCH situation",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "ksc",
-    "returnType": "bool",
-    "declaringClass": "KscDataLinkHandler"
-  },
-  {
-    "key": "kc.padVesselTitle",
-    "description": "Vessel name when on the pad; empty otherwise",
-    "units": "STRING",
-    "plotable": true,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "ksc",
-    "returnType": "string",
-    "declaringClass": "KscDataLinkHandler"
-  },
-  {
-    "key": "kc.partsAvailable",
-    "description": "Number of parts purchasable under current tech",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "ksc",
-    "returnType": "int",
-    "declaringClass": "KscDataLinkHandler"
-  },
-  {
-    "key": "kc.savedShips",
-    "description": "Saved craft files in VAB+SPH — name, partCount, totalMass, facility, requiresFunds, missingParts",
-    "units": "UNITLESS",
-    "plotable": false,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "ksc",
-    "returnType": "object",
-    "declaringClass": "KscDataLinkHandler"
-  },
-  {
-    "key": "kc.scene",
-    "description": "Current KSP scene (Flight, SpaceCenter, Editor, TrackingStation, MainMenu, Other)",
-    "units": "STRING",
-    "plotable": true,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "ksc",
-    "returnType": "string",
-    "declaringClass": "KscDataLinkHandler"
-  },
-  {
-    "key": "kc.upgradeFacility",
-    "description": "Upgrade a SC facility by short name (launchPad, vab, sph, …)",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": true,
-    "alwaysEvaluable": true,
-    "category": "ksc",
-    "returnType": "object",
-    "params": "string facilityShortName",
-    "declaringClass": "KscDataLinkHandler"
+    "declaringClass": "FARDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FARDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.available",
@@ -2100,7 +1991,8 @@
     "category": "kerbalism",
     "returnType": "bool",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.breathable",
@@ -2112,7 +2004,8 @@
     "category": "kerbalism",
     "returnType": "bool",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.co2Level",
@@ -2124,7 +2017,8 @@
     "category": "kerbalism",
     "returnType": "double",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.connection",
@@ -2136,7 +2030,8 @@
     "category": "kerbalism",
     "returnType": "object",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.connectionLinked",
@@ -2148,7 +2043,8 @@
     "category": "kerbalism",
     "returnType": "bool",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.connectionRate",
@@ -2160,7 +2056,8 @@
     "category": "kerbalism",
     "returnType": "double",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.connectionTransmitting",
@@ -2172,7 +2069,8 @@
     "category": "kerbalism",
     "returnType": "int",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.crew",
@@ -2184,7 +2082,8 @@
     "category": "kerbalism",
     "returnType": "object",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.critical",
@@ -2196,7 +2095,8 @@
     "category": "kerbalism",
     "returnType": "bool",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.drivesCapacity",
@@ -2208,7 +2108,8 @@
     "category": "kerbalism",
     "returnType": "double",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.drivesFreeSpace",
@@ -2220,7 +2121,8 @@
     "category": "kerbalism",
     "returnType": "double",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.envStormRadiation",
@@ -2232,7 +2134,8 @@
     "category": "kerbalism",
     "returnType": "double",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.envTempDiff",
@@ -2244,7 +2147,8 @@
     "category": "kerbalism",
     "returnType": "double",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.envTemperature",
@@ -2256,7 +2160,8 @@
     "category": "kerbalism",
     "returnType": "double",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.experimentRunning",
@@ -2268,7 +2173,8 @@
     "category": "kerbalism",
     "returnType": "bool",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.features",
@@ -2280,7 +2186,8 @@
     "category": "kerbalism",
     "returnType": "object",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.habitatComfort",
@@ -2292,7 +2199,8 @@
     "category": "kerbalism",
     "returnType": "double",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.habitatLivingSpace",
@@ -2304,7 +2212,8 @@
     "category": "kerbalism",
     "returnType": "double",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.habitatPressure",
@@ -2316,7 +2225,8 @@
     "category": "kerbalism",
     "returnType": "double",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.habitatRadiation",
@@ -2328,7 +2238,8 @@
     "category": "kerbalism",
     "returnType": "double",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.habitatSurface",
@@ -2340,7 +2251,8 @@
     "category": "kerbalism",
     "returnType": "double",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.habitatVolume",
@@ -2352,7 +2264,8 @@
     "category": "kerbalism",
     "returnType": "double",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.inAtmosphere",
@@ -2364,7 +2277,8 @@
     "category": "kerbalism",
     "returnType": "bool",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.innerBelt",
@@ -2376,7 +2290,8 @@
     "category": "kerbalism",
     "returnType": "bool",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.magnetosphere",
@@ -2388,7 +2303,8 @@
     "category": "kerbalism",
     "returnType": "bool",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.malfunction",
@@ -2400,7 +2316,8 @@
     "category": "kerbalism",
     "returnType": "bool",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.outerBelt",
@@ -2412,7 +2329,8 @@
     "category": "kerbalism",
     "returnType": "bool",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.radiation",
@@ -2424,7 +2342,8 @@
     "category": "kerbalism",
     "returnType": "double",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.radiationEnabled",
@@ -2436,7 +2355,8 @@
     "category": "kerbalism",
     "returnType": "bool",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.radiationShielding",
@@ -2448,7 +2368,8 @@
     "category": "kerbalism",
     "returnType": "double",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.solarExposure",
@@ -2460,7 +2381,8 @@
     "category": "kerbalism",
     "returnType": "double",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.stellarActivity",
@@ -2472,7 +2394,8 @@
     "category": "kerbalism",
     "returnType": "double",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.stellarStormDuration",
@@ -2484,7 +2407,8 @@
     "category": "kerbalism",
     "returnType": "double",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.stellarStormIncoming",
@@ -2496,7 +2420,8 @@
     "category": "kerbalism",
     "returnType": "bool",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.stellarStormInProgress",
@@ -2508,7 +2433,8 @@
     "category": "kerbalism",
     "returnType": "bool",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.stellarStormStartTime",
@@ -2520,7 +2446,8 @@
     "category": "kerbalism",
     "returnType": "double",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "kerbalism.stellarStormState",
@@ -2532,108 +2459,8 @@
     "category": "kerbalism",
     "returnType": "int",
     "requiresMod": "kerbalism",
-    "declaringClass": "KerbalismDataLinkHandler"
-  },
-  {
-    "key": "ksp.canRevert",
-    "description": "Whether any revert path is available right now (post-init snapshot OR prelaunch snapshot). Mirrors FlightDriver.CanRevert.",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "launch",
-    "returnType": "bool",
-    "declaringClass": "LaunchDataLinkHandler"
-  },
-  {
-    "key": "ksp.canRevertToEditor",
-    "description": "Whether ksp.revertToEditor would currently succeed (FlightDriver.CanRevertToPrelaunch). Useful for graying out the revert-to-editor UI when the snapshot isn't available.",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "launch",
-    "returnType": "bool",
-    "declaringClass": "LaunchDataLinkHandler"
-  },
-  {
-    "key": "ksp.canRevertToLaunch",
-    "description": "Whether ksp.revertToLaunch would currently succeed (FlightDriver.CanRevertToPostInit). Useful for graying out the revert-to-launch UI when the snapshot isn't available.",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "launch",
-    "returnType": "bool",
-    "declaringClass": "LaunchDataLinkHandler"
-  },
-  {
-    "key": "ksp.launch",
-    "description": "Load a saved craft to the chosen pad (shipName, facility, site, crewSemicolons). Refuses outside SC/Editor, refuses if an active vessel exists.",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": true,
-    "alwaysEvaluable": true,
-    "category": "launch",
-    "returnType": "object",
-    "params": "string shipName, string facility, string site, string crewSemicolons",
-    "declaringClass": "LaunchDataLinkHandler"
-  },
-  {
-    "key": "ksp.recover",
-    "description": "Recover the active vessel — only valid in PRELAUNCH / LANDED / SPLASHED",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": true,
-    "alwaysEvaluable": false,
-    "category": "launch",
-    "returnType": "object",
-    "declaringClass": "LaunchDataLinkHandler"
-  },
-  {
-    "key": "ksp.revertToEditor",
-    "description": "Revert flight back to the named editor scene (vab|sph)",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": true,
-    "alwaysEvaluable": false,
-    "category": "launch",
-    "returnType": "object",
-    "params": "string editor",
-    "declaringClass": "LaunchDataLinkHandler"
-  },
-  {
-    "key": "ksp.revertToLaunch",
-    "description": "Revert flight to the just-launched state (vessel back on pad, PRELAUNCH situation). Same as the Flight Results dialog's 'Revert to Launch' button. Refuses outside Flight scene or when the post-init snapshot isn't available.",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": true,
-    "alwaysEvaluable": true,
-    "category": "launch",
-    "returnType": "object",
-    "declaringClass": "LaunchDataLinkHandler"
-  },
-  {
-    "key": "ksp.toSpaceCenter",
-    "description": "Switch to the Space Center scene. Mirrors the Flight Results dialog's 'Space Center' button.",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": true,
-    "alwaysEvaluable": true,
-    "category": "launch",
-    "returnType": "object",
-    "declaringClass": "LaunchDataLinkHandler"
-  },
-  {
-    "key": "ksp.toTrackingStation",
-    "description": "Switch to the Tracking Station scene. Mirrors the Flight Results dialog's 'Tracking Station' button.",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": true,
-    "alwaysEvaluable": true,
-    "category": "launch",
-    "returnType": "object",
-    "declaringClass": "LaunchDataLinkHandler"
+    "declaringClass": "KerbalismDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/KerbalismDataLinkHandler.cs"
   },
   {
     "key": "land.bestSpeedAtImpact",
@@ -2644,7 +2471,8 @@
     "alwaysEvaluable": false,
     "category": "landing",
     "returnType": "double",
-    "declaringClass": "LandingDataLinkHandler"
+    "declaringClass": "LandingDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/LandingDataLinkHandler.cs"
   },
   {
     "key": "land.predictedAlt",
@@ -2655,7 +2483,8 @@
     "alwaysEvaluable": false,
     "category": "landing",
     "returnType": "double",
-    "declaringClass": "LandingDataLinkHandler"
+    "declaringClass": "LandingDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/LandingDataLinkHandler.cs"
   },
   {
     "key": "land.predictedLat",
@@ -2666,7 +2495,8 @@
     "alwaysEvaluable": false,
     "category": "landing",
     "returnType": "double",
-    "declaringClass": "LandingDataLinkHandler"
+    "declaringClass": "LandingDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/LandingDataLinkHandler.cs"
   },
   {
     "key": "land.predictedLon",
@@ -2677,7 +2507,8 @@
     "alwaysEvaluable": false,
     "category": "landing",
     "returnType": "double",
-    "declaringClass": "LandingDataLinkHandler"
+    "declaringClass": "LandingDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/LandingDataLinkHandler.cs"
   },
   {
     "key": "land.slopeAngle",
@@ -2688,7 +2519,8 @@
     "alwaysEvaluable": false,
     "category": "landing",
     "returnType": "double",
-    "declaringClass": "LandingDataLinkHandler"
+    "declaringClass": "LandingDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/LandingDataLinkHandler.cs"
   },
   {
     "key": "land.speedAtImpact",
@@ -2699,7 +2531,8 @@
     "alwaysEvaluable": false,
     "category": "landing",
     "returnType": "double",
-    "declaringClass": "LandingDataLinkHandler"
+    "declaringClass": "LandingDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/LandingDataLinkHandler.cs"
   },
   {
     "key": "land.suicideBurnCountdown",
@@ -2710,7 +2543,8 @@
     "alwaysEvaluable": false,
     "category": "landing",
     "returnType": "double",
-    "declaringClass": "LandingDataLinkHandler"
+    "declaringClass": "LandingDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/LandingDataLinkHandler.cs"
   },
   {
     "key": "land.timeToImpact",
@@ -2721,7 +2555,8 @@
     "alwaysEvaluable": false,
     "category": "landing",
     "returnType": "double",
-    "declaringClass": "LandingDataLinkHandler"
+    "declaringClass": "LandingDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/LandingDataLinkHandler.cs"
   },
   {
     "key": "m.mapIsEnabled",
@@ -2732,7 +2567,8 @@
     "alwaysEvaluable": false,
     "category": "map",
     "returnType": "bool",
-    "declaringClass": "MapViewDataLinkHandler"
+    "declaringClass": "MapViewDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "mj.available",
@@ -2744,7 +2580,8 @@
     "category": "mechjeb",
     "returnType": "bool",
     "requiresMod": "mechjeb",
-    "declaringClass": "MechJebDataLinkHandler"
+    "declaringClass": "MechJebDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/MechJebDataLinkHandler.cs"
   },
   {
     "key": "mj.node",
@@ -2927,7 +2764,8 @@
     "alwaysEvaluable": false,
     "category": "navigation",
     "returnType": "double",
-    "declaringClass": "NavBallDataLinkHandler"
+    "declaringClass": "NavBallDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "n.heading2",
@@ -2938,7 +2776,8 @@
     "alwaysEvaluable": false,
     "category": "navigation",
     "returnType": "double",
-    "declaringClass": "NavBallDataLinkHandler"
+    "declaringClass": "NavBallDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "n.pitch",
@@ -2949,7 +2788,8 @@
     "alwaysEvaluable": false,
     "category": "navigation",
     "returnType": "double",
-    "declaringClass": "NavBallDataLinkHandler"
+    "declaringClass": "NavBallDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "n.pitch2",
@@ -2960,7 +2800,8 @@
     "alwaysEvaluable": false,
     "category": "navigation",
     "returnType": "double",
-    "declaringClass": "NavBallDataLinkHandler"
+    "declaringClass": "NavBallDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "n.rawheading",
@@ -2971,7 +2812,8 @@
     "alwaysEvaluable": false,
     "category": "navigation",
     "returnType": "double",
-    "declaringClass": "NavBallDataLinkHandler"
+    "declaringClass": "NavBallDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "n.rawheading2",
@@ -2982,7 +2824,8 @@
     "alwaysEvaluable": false,
     "category": "navigation",
     "returnType": "double",
-    "declaringClass": "NavBallDataLinkHandler"
+    "declaringClass": "NavBallDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "n.rawpitch",
@@ -2993,7 +2836,8 @@
     "alwaysEvaluable": false,
     "category": "navigation",
     "returnType": "double",
-    "declaringClass": "NavBallDataLinkHandler"
+    "declaringClass": "NavBallDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "n.rawpitch2",
@@ -3004,7 +2848,8 @@
     "alwaysEvaluable": false,
     "category": "navigation",
     "returnType": "double",
-    "declaringClass": "NavBallDataLinkHandler"
+    "declaringClass": "NavBallDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "n.rawroll",
@@ -3015,7 +2860,8 @@
     "alwaysEvaluable": false,
     "category": "navigation",
     "returnType": "double",
-    "declaringClass": "NavBallDataLinkHandler"
+    "declaringClass": "NavBallDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "n.rawroll2",
@@ -3026,7 +2872,8 @@
     "alwaysEvaluable": false,
     "category": "navigation",
     "returnType": "double",
-    "declaringClass": "NavBallDataLinkHandler"
+    "declaringClass": "NavBallDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "n.roll",
@@ -3037,7 +2884,8 @@
     "alwaysEvaluable": false,
     "category": "navigation",
     "returnType": "double",
-    "declaringClass": "NavBallDataLinkHandler"
+    "declaringClass": "NavBallDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "n.roll2",
@@ -3048,7 +2896,8 @@
     "alwaysEvaluable": false,
     "category": "navigation",
     "returnType": "double",
-    "declaringClass": "NavBallDataLinkHandler"
+    "declaringClass": "NavBallDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.addManeuverNode",
@@ -3061,7 +2910,8 @@
     "returnType": "object",
     "params": "float ut, float x, float y, float z",
     "formatter": "ManeuverNode",
-    "declaringClass": "MapViewDataLinkHandler"
+    "declaringClass": "MapViewDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.anVec",
@@ -3073,7 +2923,8 @@
     "category": "orbit",
     "returnType": "Vector3d",
     "formatter": "Vector3d",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.ApA",
@@ -3084,7 +2935,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.ApR",
@@ -3095,7 +2947,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.argumentOfPeriapsis",
@@ -3106,7 +2959,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.closestEncounterBody",
@@ -3117,7 +2971,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "string",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.closestTgtApprUT",
@@ -3128,7 +2983,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.eccentricAnomaly",
@@ -3139,7 +2995,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.eccentricity",
@@ -3150,7 +3007,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.eccVec",
@@ -3162,7 +3020,8 @@
     "category": "orbit",
     "returnType": "Vector3d",
     "formatter": "Vector3d",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.encounterBody",
@@ -3173,7 +3032,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "string",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.encounterExists",
@@ -3184,7 +3044,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "int",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.encounterTime",
@@ -3195,7 +3056,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.EndUT",
@@ -3206,7 +3068,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.epoch",
@@ -3217,7 +3080,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.gameLanguage",
@@ -3228,7 +3092,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "string",
-    "declaringClass": "LangDataLinkHandler"
+    "declaringClass": "LangDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.h",
@@ -3240,7 +3105,8 @@
     "category": "orbit",
     "returnType": "Vector3d",
     "formatter": "Vector3d",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.inclination",
@@ -3251,7 +3117,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.lan",
@@ -3262,7 +3129,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.maae",
@@ -3273,7 +3141,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.maneuverNodes",
@@ -3285,7 +3154,8 @@
     "category": "maneuver",
     "returnType": "object",
     "formatter": "ManeuverNodeList",
-    "declaringClass": "MapViewDataLinkHandler"
+    "declaringClass": "MapViewDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.maneuverNodes.burnVector",
@@ -3298,7 +3168,8 @@
     "returnType": "Vector3d",
     "params": "int id",
     "formatter": "Vector3d",
-    "declaringClass": "MapViewDataLinkHandler"
+    "declaringClass": "MapViewDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.maneuverNodes.count",
@@ -3309,7 +3180,8 @@
     "alwaysEvaluable": false,
     "category": "maneuver",
     "returnType": "int",
-    "declaringClass": "MapViewDataLinkHandler"
+    "declaringClass": "MapViewDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.maneuverNodes.deltaV",
@@ -3322,7 +3194,8 @@
     "returnType": "Vector3d",
     "params": "int id",
     "formatter": "Vector3d",
-    "declaringClass": "MapViewDataLinkHandler"
+    "declaringClass": "MapViewDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.maneuverNodes.deltaVMagnitude",
@@ -3334,7 +3207,8 @@
     "category": "maneuver",
     "returnType": "double",
     "params": "int id",
-    "declaringClass": "MapViewDataLinkHandler"
+    "declaringClass": "MapViewDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.maneuverNodes.orbitPatches",
@@ -3347,7 +3221,8 @@
     "returnType": "object",
     "params": "int id",
     "formatter": "OrbitPatchList",
-    "declaringClass": "MapViewDataLinkHandler"
+    "declaringClass": "MapViewDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.maneuverNodes.relativePositionAtTrueAnomalyForManeuverNodesOrbitPatch",
@@ -3360,7 +3235,8 @@
     "returnType": "Vector3d",
     "params": "int id, int patchIndex, double trueAnomaly",
     "formatter": "Vector3d",
-    "declaringClass": "MapViewDataLinkHandler"
+    "declaringClass": "MapViewDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.maneuverNodes.relativePositionAtUTForManeuverNodesOrbitPatch",
@@ -3373,7 +3249,8 @@
     "returnType": "Vector3d",
     "params": "int id, int patchIndex, double UT",
     "formatter": "Vector3d",
-    "declaringClass": "MapViewDataLinkHandler"
+    "declaringClass": "MapViewDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.maneuverNodes.timeTo",
@@ -3385,7 +3262,8 @@
     "category": "maneuver",
     "returnType": "double",
     "params": "int id",
-    "declaringClass": "MapViewDataLinkHandler"
+    "declaringClass": "MapViewDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.maneuverNodes.trueAnomalyAtUTForManeuverNodesOrbitPatch",
@@ -3397,7 +3275,8 @@
     "category": "maneuver",
     "returnType": "double",
     "params": "int id, int patchIndex, double UT",
-    "declaringClass": "MapViewDataLinkHandler"
+    "declaringClass": "MapViewDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.maneuverNodes.UT",
@@ -3409,7 +3288,8 @@
     "category": "maneuver",
     "returnType": "double",
     "params": "int id",
-    "declaringClass": "MapViewDataLinkHandler"
+    "declaringClass": "MapViewDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.maneuverNodes.UTForTrueAnomalyForManeuverNodesOrbitPatch",
@@ -3421,7 +3301,8 @@
     "category": "maneuver",
     "returnType": "double",
     "params": "int id, int patchIndex, double trueAnomaly",
-    "declaringClass": "MapViewDataLinkHandler"
+    "declaringClass": "MapViewDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.mean.anomalisticPeriod",
@@ -3433,7 +3314,8 @@
     "category": "orbit",
     "returnType": "double",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "o.mean.ApA",
@@ -3445,7 +3327,8 @@
     "category": "orbit",
     "returnType": "double",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "o.mean.ApARange",
@@ -3457,7 +3340,8 @@
     "category": "orbit",
     "returnType": "object",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "o.mean.argumentOfPeriapsis",
@@ -3469,7 +3353,8 @@
     "category": "orbit",
     "returnType": "double",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "o.mean.eccentricity",
@@ -3481,7 +3366,8 @@
     "category": "orbit",
     "returnType": "double",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "o.mean.eccentricityRange",
@@ -3493,7 +3379,8 @@
     "category": "orbit",
     "returnType": "object",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "o.mean.inclination",
@@ -3505,7 +3392,8 @@
     "category": "orbit",
     "returnType": "double",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "o.mean.inclinationRange",
@@ -3517,7 +3405,8 @@
     "category": "orbit",
     "returnType": "object",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "o.mean.lan",
@@ -3529,7 +3418,8 @@
     "category": "orbit",
     "returnType": "double",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "o.mean.nodalPeriod",
@@ -3541,7 +3431,8 @@
     "category": "orbit",
     "returnType": "double",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "o.mean.nodalPrecession",
@@ -3553,7 +3444,8 @@
     "category": "orbit",
     "returnType": "double",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "o.mean.PeA",
@@ -3565,7 +3457,8 @@
     "category": "orbit",
     "returnType": "double",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "o.mean.PeARange",
@@ -3577,7 +3470,8 @@
     "category": "orbit",
     "returnType": "object",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "o.mean.recurrence",
@@ -3589,7 +3483,8 @@
     "category": "orbit",
     "returnType": "object",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "o.mean.siderealPeriod",
@@ -3601,7 +3496,8 @@
     "category": "orbit",
     "returnType": "double",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "o.mean.sma",
@@ -3613,7 +3509,8 @@
     "category": "orbit",
     "returnType": "double",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "o.mean.smaRange",
@@ -3625,7 +3522,8 @@
     "category": "orbit",
     "returnType": "object",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "o.meanAnomaly",
@@ -3636,7 +3534,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.nextApsisType",
@@ -3647,7 +3546,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.orbitalEnergy",
@@ -3658,7 +3558,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.orbitalSpeed",
@@ -3669,7 +3570,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.orbitalSpeedAt",
@@ -3681,7 +3583,8 @@
     "category": "orbit",
     "returnType": "double",
     "params": "double obt",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.orbitalSpeedAtDistance",
@@ -3693,7 +3596,8 @@
     "category": "orbit",
     "returnType": "double",
     "params": "double distance",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.orbitNormal",
@@ -3705,7 +3609,8 @@
     "category": "orbit",
     "returnType": "Vector3d",
     "formatter": "Vector3d",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.orbitPatches",
@@ -3717,7 +3622,8 @@
     "category": "orbit",
     "returnType": "object",
     "formatter": "OrbitPatchList",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.orbitPercent",
@@ -3728,7 +3634,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.patchEndTransition",
@@ -3739,7 +3646,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "string",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.patchStartTransition",
@@ -3750,7 +3658,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "string",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.PeA",
@@ -3761,7 +3670,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.PeR",
@@ -3772,7 +3682,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.period",
@@ -3783,7 +3694,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.pos",
@@ -3795,7 +3707,8 @@
     "category": "orbit",
     "returnType": "Vector3d",
     "formatter": "Vector3d",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.radius",
@@ -3806,7 +3719,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.radiusAtTrueAnomaly",
@@ -3818,7 +3732,8 @@
     "category": "orbit",
     "returnType": "double",
     "params": "double trueAnomaly",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.referenceBody",
@@ -3829,7 +3744,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "string",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.relativePositionAtTrueAnomalyForOrbitPatch",
@@ -3842,7 +3758,8 @@
     "returnType": "Vector3d",
     "params": "int patchIndex, double trueAnomaly",
     "formatter": "Vector3d",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.relativePositionAtUTForOrbitPatch",
@@ -3855,7 +3772,8 @@
     "returnType": "Vector3d",
     "params": "int patchIndex, double UT",
     "formatter": "Vector3d",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.relativeVelocity",
@@ -3866,7 +3784,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.removeManeuverNode",
@@ -3878,7 +3797,8 @@
     "category": "maneuver",
     "returnType": "bool",
     "params": "int id",
-    "declaringClass": "MapViewDataLinkHandler"
+    "declaringClass": "MapViewDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.semiLatusRectum",
@@ -3889,7 +3809,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.semiMinorAxis",
@@ -3900,7 +3821,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.sma",
@@ -3911,7 +3833,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.StartUT",
@@ -3922,7 +3845,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.timeOfPeriapsisPassage",
@@ -3933,7 +3857,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.timeToAp",
@@ -3944,7 +3869,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.timeToNextApsis",
@@ -3955,7 +3881,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.timeToPe",
@@ -3966,7 +3893,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.timeToTransition1",
@@ -3977,7 +3905,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.timeToTransition2",
@@ -3988,7 +3917,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.trueAnomaly",
@@ -3999,7 +3929,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.trueAnomalyAtRadius",
@@ -4011,7 +3942,8 @@
     "category": "orbit",
     "returnType": "double",
     "params": "double radius",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.trueAnomalyAtUTForOrbitPatch",
@@ -4023,7 +3955,8 @@
     "category": "orbit",
     "returnType": "double",
     "params": "int patchIndex, double UT",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.updateManeuverNode",
@@ -4036,7 +3969,8 @@
     "returnType": "object",
     "params": "int id, float ut, float x, float y, float z",
     "formatter": "ManeuverNode",
-    "declaringClass": "MapViewDataLinkHandler"
+    "declaringClass": "MapViewDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.UTForTrueAnomalyForOrbitPatch",
@@ -4048,7 +3982,8 @@
     "category": "orbit",
     "returnType": "double",
     "params": "int patchIndex, double trueAnomaly",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.UTsoi",
@@ -4059,7 +3994,8 @@
     "alwaysEvaluable": false,
     "category": "orbit",
     "returnType": "double",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "o.vel",
@@ -4071,7 +4007,8 @@
     "category": "orbit",
     "returnType": "Vector3d",
     "formatter": "Vector3d",
-    "declaringClass": "OrbitDataLinkHandler"
+    "declaringClass": "OrbitDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "p.paused",
@@ -4082,7 +4019,8 @@
     "alwaysEvaluable": true,
     "category": "system",
     "returnType": "int",
-    "declaringClass": "PausedDataLinkHandler"
+    "declaringClass": "PausedDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/SystemHandlers.cs"
   },
   {
     "key": "principia.active",
@@ -4094,7 +4032,8 @@
     "category": "principia",
     "returnType": "bool",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "principia.analysis",
@@ -4106,7 +4045,8 @@
     "category": "principia",
     "returnType": "object",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "principia.analysisProgress",
@@ -4118,7 +4058,8 @@
     "category": "principia",
     "returnType": "double",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "principia.available",
@@ -4130,7 +4071,8 @@
     "category": "principia",
     "returnType": "bool",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "principia.missionDuration",
@@ -4142,7 +4084,8 @@
     "category": "principia",
     "returnType": "double",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "principia.plan.burn",
@@ -4155,7 +4098,8 @@
     "returnType": "object",
     "params": "int index",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "principia.plan.burns",
@@ -4167,7 +4111,8 @@
     "category": "principia",
     "returnType": "object",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "principia.plan.count",
@@ -4179,7 +4124,8 @@
     "category": "principia",
     "returnType": "int",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "principia.plan.guidance",
@@ -4191,7 +4137,8 @@
     "category": "principia",
     "returnType": "bool",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "principia.version",
@@ -4203,7 +4150,8 @@
     "category": "principia",
     "returnType": "string",
     "requiresMod": "principia",
-    "declaringClass": "PrincipiaDataLinkHandler"
+    "declaringClass": "PrincipiaDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/PrincipiaDataLinkHandler.cs"
   },
   {
     "key": "r.resource",
@@ -4216,7 +4164,8 @@
     "returnType": "object",
     "params": "string resourceName",
     "formatter": "ResourceList",
-    "declaringClass": "ResourceDataLinkHandler"
+    "declaringClass": "ResourceDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ResourceHandlers.cs"
   },
   {
     "key": "r.resourceCurrent",
@@ -4229,7 +4178,8 @@
     "returnType": "object",
     "params": "string resourceName",
     "formatter": "ActiveResourceList",
-    "declaringClass": "ResourceDataLinkHandler"
+    "declaringClass": "ResourceDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ResourceHandlers.cs"
   },
   {
     "key": "r.resourceCurrentMax",
@@ -4242,7 +4192,8 @@
     "returnType": "object",
     "params": "string resourceName",
     "formatter": "MaxCurrentResourceList",
-    "declaringClass": "ResourceDataLinkHandler"
+    "declaringClass": "ResourceDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ResourceHandlers.cs"
   },
   {
     "key": "r.resourceMax",
@@ -4255,7 +4206,8 @@
     "returnType": "object",
     "params": "string resourceName",
     "formatter": "MaxResourceList",
-    "declaringClass": "ResourceDataLinkHandler"
+    "declaringClass": "ResourceDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ResourceHandlers.cs"
   },
   {
     "key": "r.resourceNameList",
@@ -4267,7 +4219,8 @@
     "category": "resource",
     "returnType": "string[]",
     "formatter": "StringArray",
-    "declaringClass": "ResourceDataLinkHandler"
+    "declaringClass": "ResourceDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ResourceHandlers.cs"
   },
   {
     "key": "rc.anyDeployed",
@@ -4279,7 +4232,8 @@
     "category": "realchute",
     "returnType": "bool",
     "requiresMod": "realchute",
-    "declaringClass": "RealChuteDataLinkHandler"
+    "declaringClass": "RealChuteDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/RealChuteDataLinkHandler.cs"
   },
   {
     "key": "rc.arm",
@@ -4291,7 +4245,8 @@
     "category": "realchute",
     "returnType": "bool",
     "requiresMod": "realchute",
-    "declaringClass": "RealChuteDataLinkHandler"
+    "declaringClass": "RealChuteDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/RealChuteDataLinkHandler.cs"
   },
   {
     "key": "rc.available",
@@ -4303,7 +4258,8 @@
     "category": "realchute",
     "returnType": "bool",
     "requiresMod": "realchute",
-    "declaringClass": "RealChuteDataLinkHandler"
+    "declaringClass": "RealChuteDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/RealChuteDataLinkHandler.cs"
   },
   {
     "key": "rc.chutes",
@@ -4315,7 +4271,8 @@
     "category": "realchute",
     "returnType": "object",
     "requiresMod": "realchute",
-    "declaringClass": "RealChuteDataLinkHandler"
+    "declaringClass": "RealChuteDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/RealChuteDataLinkHandler.cs"
   },
   {
     "key": "rc.count",
@@ -4327,7 +4284,8 @@
     "category": "realchute",
     "returnType": "int",
     "requiresMod": "realchute",
-    "declaringClass": "RealChuteDataLinkHandler"
+    "declaringClass": "RealChuteDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/RealChuteDataLinkHandler.cs"
   },
   {
     "key": "rc.cut",
@@ -4339,7 +4297,8 @@
     "category": "realchute",
     "returnType": "bool",
     "requiresMod": "realchute",
-    "declaringClass": "RealChuteDataLinkHandler"
+    "declaringClass": "RealChuteDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/RealChuteDataLinkHandler.cs"
   },
   {
     "key": "rc.deploy",
@@ -4351,7 +4310,8 @@
     "category": "realchute",
     "returnType": "bool",
     "requiresMod": "realchute",
-    "declaringClass": "RealChuteDataLinkHandler"
+    "declaringClass": "RealChuteDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/RealChuteDataLinkHandler.cs"
   },
   {
     "key": "rc.disarm",
@@ -4363,7 +4323,8 @@
     "category": "realchute",
     "returnType": "bool",
     "requiresMod": "realchute",
-    "declaringClass": "RealChuteDataLinkHandler"
+    "declaringClass": "RealChuteDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/RealChuteDataLinkHandler.cs"
   },
   {
     "key": "rc.safeState",
@@ -4375,29 +4336,8 @@
     "category": "realchute",
     "returnType": "string",
     "requiresMod": "realchute",
-    "declaringClass": "RealChuteDataLinkHandler"
-  },
-  {
-    "key": "recovery.hasRecent",
-    "description": "Whether a mission-summary snapshot has been captured this session (true after the first vessel is recovered).",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "recovery",
-    "returnType": "bool",
-    "declaringClass": "RecoveryDialogHandler"
-  },
-  {
-    "key": "recovery.lastSummary",
-    "description": "Most recent mission-summary snapshot. Includes vessel name, recovery location and factor, science/funds/reputation totals + earned + modifiers, and per-experiment, per-part, per-resource, per-crew breakdowns. Captures automatically when KSP completes recovery processing (no dialog dismissal needed). Persists across scene changes; cleared on KSP restart.",
-    "units": "UNITLESS",
-    "plotable": false,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "recovery",
-    "returnType": "object",
-    "declaringClass": "RecoveryDialogHandler"
+    "declaringClass": "RealChuteDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/RealChuteDataLinkHandler.cs"
   },
   {
     "key": "s.sensor",
@@ -4410,7 +4350,8 @@
     "returnType": "object",
     "params": "string sensorType",
     "formatter": "SensorModuleList",
-    "declaringClass": "SensorDataLinkHandler"
+    "declaringClass": "SensorDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ResourceHandlers.cs"
   },
   {
     "key": "s.sensor.acc",
@@ -4422,7 +4363,8 @@
     "category": "sensor",
     "returnType": "object",
     "formatter": "SensorModuleList",
-    "declaringClass": "SensorDataLinkHandler"
+    "declaringClass": "SensorDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ResourceHandlers.cs"
   },
   {
     "key": "s.sensor.grav",
@@ -4434,7 +4376,8 @@
     "category": "sensor",
     "returnType": "object",
     "formatter": "SensorModuleList",
-    "declaringClass": "SensorDataLinkHandler"
+    "declaringClass": "SensorDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ResourceHandlers.cs"
   },
   {
     "key": "s.sensor.pres",
@@ -4446,7 +4389,8 @@
     "category": "sensor",
     "returnType": "object",
     "formatter": "SensorModuleList",
-    "declaringClass": "SensorDataLinkHandler"
+    "declaringClass": "SensorDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ResourceHandlers.cs"
   },
   {
     "key": "s.sensor.temp",
@@ -4458,29 +4402,8 @@
     "category": "sensor",
     "returnType": "object",
     "formatter": "SensorModuleList",
-    "declaringClass": "SensorDataLinkHandler"
-  },
-  {
-    "key": "sci.canRecoverTotal",
-    "description": "Total dataAmount across all stored ScienceData on the active vessel (alias of canTransmitTotal — separate key in case Phase 4 formulas diverge)",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": false,
-    "alwaysEvaluable": false,
-    "category": "science",
-    "returnType": "double",
-    "declaringClass": "ScienceInstrumentsDataLinkHandler"
-  },
-  {
-    "key": "sci.canTransmitTotal",
-    "description": "Total dataAmount across all stored ScienceData on the active vessel",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": false,
-    "alwaysEvaluable": false,
-    "category": "science",
-    "returnType": "double",
-    "declaringClass": "ScienceInstrumentsDataLinkHandler"
+    "declaringClass": "SensorDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ResourceHandlers.cs"
   },
   {
     "key": "sci.count",
@@ -4491,7 +4414,8 @@
     "alwaysEvaluable": false,
     "category": "science",
     "returnType": "int",
-    "declaringClass": "ScienceCareerDataLinkHandler"
+    "declaringClass": "ScienceCareerDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ScienceCareerDataLinkHandler.cs"
   },
   {
     "key": "sci.dataAmount",
@@ -4502,42 +4426,8 @@
     "alwaysEvaluable": false,
     "category": "science",
     "returnType": "double",
-    "declaringClass": "ScienceCareerDataLinkHandler"
-  },
-  {
-    "key": "sci.deploy",
-    "description": "Run an experiment by part flightID (no result dialog — direct data capture)",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": true,
-    "alwaysEvaluable": false,
-    "category": "science",
-    "returnType": "object",
-    "params": "uint partId",
-    "declaringClass": "ScienceInstrumentsDataLinkHandler"
-  },
-  {
-    "key": "sci.dump",
-    "description": "Discard all stored data on the part without transmitting",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": true,
-    "alwaysEvaluable": false,
-    "category": "science",
-    "returnType": "object",
-    "params": "uint partId",
-    "declaringClass": "ScienceInstrumentsDataLinkHandler"
-  },
-  {
-    "key": "sci.experimentBreakdown",
-    "description": "Per-stored-data detail on the active vessel — subjectId / biome / situation / mits / transmit values / remaining potential",
-    "units": "UNITLESS",
-    "plotable": false,
-    "isAction": false,
-    "alwaysEvaluable": false,
-    "category": "science",
-    "returnType": "object",
-    "declaringClass": "ScienceInstrumentsDataLinkHandler"
+    "declaringClass": "ScienceCareerDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ScienceCareerDataLinkHandler.cs"
   },
   {
     "key": "sci.experiments",
@@ -4548,42 +4438,8 @@
     "alwaysEvaluable": false,
     "category": "science",
     "returnType": "object",
-    "declaringClass": "ScienceCareerDataLinkHandler"
-  },
-  {
-    "key": "sci.instruments",
-    "description": "Per-instrument state on the active vessel (partId, partTitle, expId, deployed, hasData, rerunnable, inoperable)",
-    "units": "UNITLESS",
-    "plotable": false,
-    "isAction": false,
-    "alwaysEvaluable": false,
-    "category": "science",
-    "returnType": "object",
-    "declaringClass": "ScienceInstrumentsDataLinkHandler"
-  },
-  {
-    "key": "sci.reset",
-    "description": "Reset experiment — clears Deployed + drops data, makes rerunnable instruments ready to run again",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": true,
-    "alwaysEvaluable": false,
-    "category": "science",
-    "returnType": "object",
-    "params": "uint partId",
-    "declaringClass": "ScienceInstrumentsDataLinkHandler"
-  },
-  {
-    "key": "sci.transmit",
-    "description": "Transmit stored data on the part via the active vessel's best transmitter",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": true,
-    "alwaysEvaluable": false,
-    "category": "science",
-    "returnType": "object",
-    "params": "uint partId",
-    "declaringClass": "ScienceInstrumentsDataLinkHandler"
+    "declaringClass": "ScienceCareerDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ScienceCareerDataLinkHandler.cs"
   },
   {
     "key": "t.currentRate",
@@ -4594,7 +4450,8 @@
     "alwaysEvaluable": false,
     "category": "timewarp",
     "returnType": "double",
-    "declaringClass": "TimeWarpDataLinkHandler"
+    "declaringClass": "TimeWarpDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "t.currentRateIndex",
@@ -4605,7 +4462,8 @@
     "alwaysEvaluable": false,
     "category": "timewarp",
     "returnType": "double",
-    "declaringClass": "TimeWarpDataLinkHandler"
+    "declaringClass": "TimeWarpDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "t.deltaTime",
@@ -4616,7 +4474,8 @@
     "alwaysEvaluable": false,
     "category": "timewarp",
     "returnType": "double",
-    "declaringClass": "TimeWarpDataLinkHandler"
+    "declaringClass": "TimeWarpDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "t.isPaused",
@@ -4627,7 +4486,8 @@
     "alwaysEvaluable": false,
     "category": "timewarp",
     "returnType": "bool",
-    "declaringClass": "TimeWarpDataLinkHandler"
+    "declaringClass": "TimeWarpDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "t.maxPhysicsRate",
@@ -4638,7 +4498,8 @@
     "alwaysEvaluable": false,
     "category": "timewarp",
     "returnType": "double",
-    "declaringClass": "TimeWarpDataLinkHandler"
+    "declaringClass": "TimeWarpDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "t.universalTime",
@@ -4649,7 +4510,8 @@
     "alwaysEvaluable": true,
     "category": "timewarp",
     "returnType": "double",
-    "declaringClass": "TimeWarpDataLinkHandler"
+    "declaringClass": "TimeWarpDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "t.warpMode",
@@ -4660,7 +4522,20 @@
     "alwaysEvaluable": false,
     "category": "timewarp",
     "returnType": "string",
-    "declaringClass": "TimeWarpDataLinkHandler"
+    "declaringClass": "TimeWarpDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
+  },
+  {
+    "key": "tar.availableVessels",
+    "description": "Available target vessels with their setTargetVessel indices",
+    "units": "UNITLESS",
+    "plotable": false,
+    "isAction": false,
+    "alwaysEvaluable": false,
+    "category": "target",
+    "returnType": "object",
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.clearTarget",
@@ -4671,7 +4546,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "int",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.distance",
@@ -4682,7 +4558,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "double",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.groundDistance",
@@ -4693,7 +4570,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "double",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.name",
@@ -4704,7 +4582,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "string",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.ApA",
@@ -4715,7 +4594,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "double",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.argumentOfPeriapsis",
@@ -4726,7 +4606,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "double",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.eccentricity",
@@ -4737,7 +4618,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "double",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.inclination",
@@ -4748,7 +4630,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "double",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.lan",
@@ -4759,7 +4642,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "double",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.maae",
@@ -4770,7 +4654,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "double",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.orbitingBody",
@@ -4781,7 +4666,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "string",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.orbitPatches",
@@ -4793,7 +4679,8 @@
     "category": "target",
     "returnType": "double",
     "formatter": "OrbitPatchList",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.PeA",
@@ -4804,7 +4691,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "double",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.period",
@@ -4815,7 +4703,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "double",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.relativeInclination",
@@ -4826,7 +4715,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "double",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.relativePositionAtTrueAnomalyForOrbitPatch",
@@ -4839,7 +4729,8 @@
     "returnType": "double",
     "params": "int orbitPatchIndex, float trueAnomaly",
     "formatter": "Vector3d",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.relativePositionAtUTForOrbitPatch",
@@ -4852,7 +4743,8 @@
     "returnType": "double",
     "params": "int orbitPatchIndex, double universalTime",
     "formatter": "Vector3d",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.relativeVelocity",
@@ -4863,7 +4755,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "double",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.sma",
@@ -4874,7 +4767,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "double",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.timeOfPeriapsisPassage",
@@ -4885,7 +4779,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "double",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.timeToAp",
@@ -4896,7 +4791,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "double",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.timeToPe",
@@ -4907,7 +4803,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "double",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.timeToTransition1",
@@ -4918,7 +4815,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "double",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.timeToTransition2",
@@ -4929,7 +4827,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "double",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.trueAnomaly",
@@ -4940,7 +4839,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "double",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.trueAnomalyAtUTForOrbitPatch",
@@ -4952,7 +4852,8 @@
     "category": "target",
     "returnType": "double",
     "params": "int orbitPatchIndex, float universalTime",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.UTForTrueAnomalyForOrbitPatch",
@@ -4964,7 +4865,8 @@
     "category": "target",
     "returnType": "double",
     "params": "int orbitPatchIndex, float trueAnomaly",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.o.velocity",
@@ -4975,7 +4877,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "double",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.setTargetBody",
@@ -4987,7 +4890,8 @@
     "category": "target",
     "returnType": "int",
     "params": "int bodyId",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.setTargetVessel",
@@ -4999,7 +4903,21 @@
     "category": "target",
     "returnType": "int",
     "params": "int vesselIndex",
-    "declaringClass": "TargetDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
+  },
+  {
+    "key": "tar.switchVessel",
+    "description": "Fly to vessel by index — same as Tracking Station 'Fly'. Saves the current vessel's state first, then loads the target. Args: int vesselIndex (from tar.availableVessels.index). Returns true on dispatch; scene change is asynchronous.",
+    "units": "UNITLESS",
+    "plotable": true,
+    "isAction": true,
+    "alwaysEvaluable": false,
+    "category": "target",
+    "returnType": "bool",
+    "params": "int vesselIndex",
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "tar.type",
@@ -5010,52 +4928,8 @@
     "alwaysEvaluable": false,
     "category": "target",
     "returnType": "string",
-    "declaringClass": "TargetDataLinkHandler"
-  },
-  {
-    "key": "tech.affordable",
-    "description": "Tech-tree nodes affordable right now (not yet unlocked, scienceCost <= current science)",
-    "units": "UNITLESS",
-    "plotable": false,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "career",
-    "returnType": "object",
-    "declaringClass": "TechTreeDataLinkHandler"
-  },
-  {
-    "key": "tech.unlock",
-    "description": "Unlock a tech-tree node — deducts science, marks node Available",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": true,
-    "alwaysEvaluable": true,
-    "category": "career",
-    "returnType": "object",
-    "params": "string techId",
-    "declaringClass": "TechTreeDataLinkHandler"
-  },
-  {
-    "key": "tech.unlockedIds",
-    "description": "Tech-tree node ids the player has researched",
-    "units": "UNITLESS",
-    "plotable": false,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "career",
-    "returnType": "object",
-    "declaringClass": "TechTreeDataLinkHandler"
-  },
-  {
-    "key": "tech.unlockedPartCount",
-    "description": "Number of parts purchasable under current tech",
-    "units": "UNITLESS",
-    "plotable": true,
-    "isAction": false,
-    "alwaysEvaluable": true,
-    "category": "career",
-    "returnType": "int",
-    "declaringClass": "TechTreeDataLinkHandler"
+    "declaringClass": "TargetDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/NavigationHandlers.cs"
   },
   {
     "key": "therm.anyEnginesOverheating",
@@ -5066,7 +4940,8 @@
     "alwaysEvaluable": false,
     "category": "thermal",
     "returnType": "bool",
-    "declaringClass": "ThermalDataLinkHandler"
+    "declaringClass": "ThermalDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ThermalDataLinkHandler.cs"
   },
   {
     "key": "therm.heatShieldFlux",
@@ -5077,7 +4952,8 @@
     "alwaysEvaluable": false,
     "category": "thermal",
     "returnType": "double",
-    "declaringClass": "ThermalDataLinkHandler"
+    "declaringClass": "ThermalDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ThermalDataLinkHandler.cs"
   },
   {
     "key": "therm.heatShieldTemp",
@@ -5088,7 +4964,8 @@
     "alwaysEvaluable": false,
     "category": "thermal",
     "returnType": "double",
-    "declaringClass": "ThermalDataLinkHandler"
+    "declaringClass": "ThermalDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ThermalDataLinkHandler.cs"
   },
   {
     "key": "therm.heatShieldTempCelsius",
@@ -5099,7 +4976,8 @@
     "alwaysEvaluable": false,
     "category": "thermal",
     "returnType": "double",
-    "declaringClass": "ThermalDataLinkHandler"
+    "declaringClass": "ThermalDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ThermalDataLinkHandler.cs"
   },
   {
     "key": "therm.hottestEngineMaxTemp",
@@ -5110,7 +4988,8 @@
     "alwaysEvaluable": false,
     "category": "thermal",
     "returnType": "double",
-    "declaringClass": "ThermalDataLinkHandler"
+    "declaringClass": "ThermalDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ThermalDataLinkHandler.cs"
   },
   {
     "key": "therm.hottestEngineTemp",
@@ -5121,7 +5000,8 @@
     "alwaysEvaluable": false,
     "category": "thermal",
     "returnType": "double",
-    "declaringClass": "ThermalDataLinkHandler"
+    "declaringClass": "ThermalDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ThermalDataLinkHandler.cs"
   },
   {
     "key": "therm.hottestEngineTempRatio",
@@ -5132,7 +5012,8 @@
     "alwaysEvaluable": false,
     "category": "thermal",
     "returnType": "double",
-    "declaringClass": "ThermalDataLinkHandler"
+    "declaringClass": "ThermalDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ThermalDataLinkHandler.cs"
   },
   {
     "key": "therm.hottestPartMaxTemp",
@@ -5143,7 +5024,8 @@
     "alwaysEvaluable": false,
     "category": "thermal",
     "returnType": "double",
-    "declaringClass": "ThermalDataLinkHandler"
+    "declaringClass": "ThermalDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ThermalDataLinkHandler.cs"
   },
   {
     "key": "therm.hottestPartName",
@@ -5154,7 +5036,8 @@
     "alwaysEvaluable": false,
     "category": "thermal",
     "returnType": "string",
-    "declaringClass": "ThermalDataLinkHandler"
+    "declaringClass": "ThermalDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ThermalDataLinkHandler.cs"
   },
   {
     "key": "therm.hottestPartTemp",
@@ -5165,7 +5048,8 @@
     "alwaysEvaluable": false,
     "category": "thermal",
     "returnType": "double",
-    "declaringClass": "ThermalDataLinkHandler"
+    "declaringClass": "ThermalDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ThermalDataLinkHandler.cs"
   },
   {
     "key": "therm.hottestPartTempKelvin",
@@ -5176,7 +5060,8 @@
     "alwaysEvaluable": false,
     "category": "thermal",
     "returnType": "double",
-    "declaringClass": "ThermalDataLinkHandler"
+    "declaringClass": "ThermalDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ThermalDataLinkHandler.cs"
   },
   {
     "key": "therm.hottestPartTempRatio",
@@ -5187,7 +5072,8 @@
     "alwaysEvaluable": false,
     "category": "thermal",
     "returnType": "double",
-    "declaringClass": "ThermalDataLinkHandler"
+    "declaringClass": "ThermalDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/ThermalDataLinkHandler.cs"
   },
   {
     "key": "v.abortValue",
@@ -5198,7 +5084,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "bool",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.acceleration",
@@ -5209,7 +5096,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.accelerationx",
@@ -5220,7 +5108,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.accelerationy",
@@ -5231,7 +5120,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.accelerationz",
@@ -5242,7 +5132,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.ag10Value",
@@ -5253,7 +5144,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "bool",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.ag1Value",
@@ -5264,7 +5156,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "bool",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.ag2Value",
@@ -5275,7 +5168,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "bool",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.ag3Value",
@@ -5286,7 +5180,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "bool",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.ag4Value",
@@ -5297,7 +5192,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "bool",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.ag5Value",
@@ -5308,7 +5204,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "bool",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.ag6Value",
@@ -5319,7 +5216,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "bool",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.ag7Value",
@@ -5330,7 +5228,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "bool",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.ag8Value",
@@ -5341,7 +5240,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "bool",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.ag9Value",
@@ -5352,7 +5252,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "bool",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.altitude",
@@ -5363,7 +5264,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.angleToPrograde",
@@ -5374,7 +5276,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.angularMomentum",
@@ -5385,7 +5288,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.angularMomentumx",
@@ -5396,7 +5300,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.angularMomentumy",
@@ -5407,7 +5312,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.angularMomentumz",
@@ -5418,7 +5324,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.angularVelocity",
@@ -5429,7 +5336,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.angularVelocityx",
@@ -5440,7 +5348,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.angularVelocityy",
@@ -5451,7 +5360,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.angularVelocityz",
@@ -5462,7 +5372,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.atmosphericDensity",
@@ -5473,7 +5384,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.atmosphericPressure",
@@ -5484,7 +5396,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.atmosphericPressurePa",
@@ -5495,7 +5408,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.atmosphericTemperature",
@@ -5506,7 +5420,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.biome",
@@ -5517,7 +5432,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "string",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.biomeLocalized",
@@ -5528,7 +5444,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "string",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.body",
@@ -5539,7 +5456,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "string",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.brakeValue",
@@ -5550,7 +5468,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "bool",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.CoM",
@@ -5562,7 +5481,8 @@
     "category": "vessel",
     "returnType": "Vector3d",
     "formatter": "Vector3d",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.crew",
@@ -5574,7 +5494,8 @@
     "category": "vessel",
     "returnType": "string[]",
     "formatter": "StringArray",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.crewCapacity",
@@ -5585,7 +5506,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "int",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.crewCount",
@@ -5596,7 +5518,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "int",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.currentStage",
@@ -5607,7 +5530,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "int",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.directSunlight",
@@ -5618,7 +5542,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "bool",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.distanceToSun",
@@ -5629,7 +5554,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.dynamicPressure",
@@ -5640,7 +5566,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.dynamicPressurekPa",
@@ -5651,7 +5578,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.externalTemperature",
@@ -5662,7 +5590,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.gearValue",
@@ -5673,7 +5602,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "bool",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.geeForce",
@@ -5684,7 +5614,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.geeForceImmediate",
@@ -5695,7 +5626,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.heightFromSurface",
@@ -5706,7 +5638,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.heightFromTerrain",
@@ -5717,7 +5650,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.indicatedAirSpeed",
@@ -5728,7 +5662,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.isActiveVessel",
@@ -5739,7 +5674,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "bool",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.isCommandable",
@@ -5750,7 +5686,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "bool",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.isControllable",
@@ -5761,7 +5698,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "bool",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.isEVA",
@@ -5772,7 +5710,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "bool",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.landed",
@@ -5783,7 +5722,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "bool",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.landedAt",
@@ -5794,7 +5734,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "string",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.landedOrSplashed",
@@ -5805,7 +5746,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "bool",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.lat",
@@ -5816,7 +5758,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.launchTime",
@@ -5827,7 +5770,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.lightValue",
@@ -5838,7 +5782,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "bool",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.loaded",
@@ -5849,7 +5794,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "bool",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.long",
@@ -5860,7 +5806,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.mach",
@@ -5871,7 +5818,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.mass",
@@ -5882,7 +5830,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.missionTime",
@@ -5893,7 +5842,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.missionTimeString",
@@ -5904,7 +5854,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "string",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.momentOfInertia",
@@ -5916,7 +5867,8 @@
     "category": "vessel",
     "returnType": "Vector3d",
     "formatter": "Vector3d",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.name",
@@ -5927,7 +5879,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "string",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.obtSpeed",
@@ -5938,7 +5891,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.orbitalVelocity",
@@ -5949,7 +5903,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.orbitalVelocityx",
@@ -5960,7 +5915,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.orbitalVelocityy",
@@ -5971,7 +5927,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.orbitalVelocityz",
@@ -5982,7 +5939,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.packed",
@@ -5993,7 +5951,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "bool",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.perturbation",
@@ -6004,7 +5963,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.perturbationx",
@@ -6015,7 +5975,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.perturbationy",
@@ -6026,7 +5987,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.perturbationz",
@@ -6037,7 +5999,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.pqsAltitude",
@@ -6048,7 +6011,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.precisionControlValue",
@@ -6059,7 +6023,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "bool",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.rcsValue",
@@ -6070,7 +6035,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "bool",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.sasValue",
@@ -6081,7 +6047,8 @@
     "alwaysEvaluable": false,
     "category": "flight",
     "returnType": "bool",
-    "declaringClass": "FlightDataLinkHandler"
+    "declaringClass": "FlightDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.setAttitude",
@@ -6093,7 +6060,8 @@
     "category": "fbw",
     "returnType": "int",
     "params": "float pitch, float yaw, float roll",
-    "declaringClass": "FlyByWireDataLinkHandler"
+    "declaringClass": "FlyByWireDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.setFbW",
@@ -6105,7 +6073,8 @@
     "category": "fbw",
     "returnType": "int",
     "params": "int state",
-    "declaringClass": "FlyByWireDataLinkHandler"
+    "declaringClass": "FlyByWireDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.setPitch",
@@ -6117,7 +6086,8 @@
     "category": "fbw",
     "returnType": "int",
     "params": "float pitch",
-    "declaringClass": "FlyByWireDataLinkHandler"
+    "declaringClass": "FlyByWireDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.setPitchYawRollXYZ",
@@ -6129,7 +6099,8 @@
     "category": "fbw",
     "returnType": "int",
     "params": "float pitch, float yaw, float roll, float x, float y, float z",
-    "declaringClass": "FlyByWireDataLinkHandler"
+    "declaringClass": "FlyByWireDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.setRoll",
@@ -6141,7 +6112,8 @@
     "category": "fbw",
     "returnType": "int",
     "params": "float roll",
-    "declaringClass": "FlyByWireDataLinkHandler"
+    "declaringClass": "FlyByWireDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.setTranslation",
@@ -6153,7 +6125,8 @@
     "category": "fbw",
     "returnType": "int",
     "params": "float x, float y, float z",
-    "declaringClass": "FlyByWireDataLinkHandler"
+    "declaringClass": "FlyByWireDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.setYaw",
@@ -6165,7 +6138,8 @@
     "category": "fbw",
     "returnType": "int",
     "params": "float yaw",
-    "declaringClass": "FlyByWireDataLinkHandler"
+    "declaringClass": "FlyByWireDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/FlightControlHandlers.cs"
   },
   {
     "key": "v.situation",
@@ -6176,7 +6150,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "string",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.situationString",
@@ -6187,7 +6162,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "string",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.solarFlux",
@@ -6198,7 +6174,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.specificAcceleration",
@@ -6209,7 +6186,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.speed",
@@ -6220,7 +6198,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.speedOfSound",
@@ -6231,7 +6210,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.splashed",
@@ -6242,7 +6222,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "bool",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.srfSpeed",
@@ -6253,7 +6234,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.staticPressure",
@@ -6264,7 +6246,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.staticPressurekPa",
@@ -6275,7 +6258,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.surfaceSpeed",
@@ -6286,7 +6270,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.surfaceVelocity",
@@ -6297,7 +6282,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.surfaceVelocityx",
@@ -6308,7 +6294,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.surfaceVelocityy",
@@ -6319,7 +6306,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.surfaceVelocityz",
@@ -6330,7 +6318,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.terrainHeight",
@@ -6341,7 +6330,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.terrainNormal",
@@ -6353,7 +6343,8 @@
     "category": "vessel",
     "returnType": "Vector3d",
     "formatter": "Vector3d",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.upAxis",
@@ -6365,7 +6356,8 @@
     "category": "vessel",
     "returnType": "Vector3d",
     "formatter": "Vector3d",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.verticalSpeed",
@@ -6376,7 +6368,8 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "double",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   },
   {
     "key": "v.vesselType",
@@ -6387,6 +6380,7 @@
     "alwaysEvaluable": false,
     "category": "vessel",
     "returnType": "string",
-    "declaringClass": "VesselDataLinkHandler"
+    "declaringClass": "VesselDataLinkHandler",
+    "sourceFile": "/Users/jon.pepler/personal/gonogo/local_docs/telemachus-fork/Telemachus/src/VesselDataHandlers.cs"
   }
 ]
