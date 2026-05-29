@@ -600,6 +600,7 @@ SAS modes: `StabilityAssist`, `Prograde`, `Retrograde`, `Normal`, `Antinormal`, 
 | `f.abort` | **Action:** trigger abort |
 | `f.ag1` … `f.ag10` | **Action:** custom action groups |
 | `f.stage` | **Action:** activate next stage |
+| `f.ag.bindings` | Flat per-action listing of which parts are bound to each action group on the active vessel. One row per (action, group) pair; unbound actions are omitted. |
 
 </details>
 
@@ -855,10 +856,11 @@ Snapshot keys captured from `GameEvents` — readable from any scene (including 
 
 ### `tech.*` — Tech tree
 
-All `AlwaysEvaluable` — queryable from any scene.
+Callable from any game scene.
 
 | Key | Description |
 |-----|-------------|
+| `tech.nodes` | Full tech tree — every node with its title, description, science cost, prerequisites, state (Available / Researchable / Unavailable), and the parts it unlocks. Costs include both nominal and strategy-modified effective values. See the OpenAPI schema for field detail. |
 | `tech.unlockedIds` | All currently unlocked node IDs |
 | `tech.unlockedPartCount` | Count of unlocked parts |
 | `tech.affordable` | Unpurchased nodes affordable right now (with cost / scienceRequired) |
@@ -868,13 +870,13 @@ All `AlwaysEvaluable` — queryable from any scene.
 
 | Key | Description |
 |-----|-------------|
-| `kc.scene` | Current scene name (`SPACECENTER`, `FLIGHT`, `EDITOR`, `TRACKSTATION`, …) |
-| `kc.facilityLevels` | All ScenarioUpgradeableFacilities with current + max upgrade levels |
+| `kc.scene` | Current scene name (`SPACECENTER`, `FLIGHT`, `EDITOR`, or `TRACKSTATION`) |
+| `kc.facilityLevels` | All Space Center facilities — current level, max level, upgrade cost (nominal and strategy-modified), and the multi-line descriptions KSP shows in its upgrade dialog |
 | `kc.launchSite` | Active launch site (`LaunchPad` / `Runway`) |
 | `kc.padOccupied` / `kc.padVesselTitle` | Pad state |
 | `kc.partsAvailable` | All purchasable parts with their availability + cost |
-| `kc.savedShips` | Saved craft listing per facility |
-| `kc.crewRoster` | Full kerbal roster with courage / stupidity / badass / veteran / gender / type / experience / careerFlights / careerEntries / currentVesselId / currentVesselName |
+| `kc.savedShips` | Saved craft per facility — name, part count, mass, rollout cost (nominal and strategy-modified), and any missing-part references |
+| `kc.crewRoster` | Full kerbal roster — name, stats, experience, and current assignment |
 | `kc.upgradeFacility[facilityName]` | **Action:** start a facility upgrade; deducts funds |
 
 ### `sci.*` — Science
@@ -916,10 +918,6 @@ All `AlwaysEvaluable` action keys for launch / recovery / revert / scene transit
 | `ksp.revertToEditor[vab\|sph]` | **Action:** revert to the editor scene (Flight only) |
 | `ksp.toSpaceCenter` / `ksp.toTrackingStation` | **Action:** switch scenes |
 | `ksp.canRevert` / `ksp.canRevertToLaunch` / `ksp.canRevertToEditor` | Whether the corresponding revert path is available (mirrors `FlightDriver.CanRevert*`) |
-
-### Action group bindings
-
-`f.ag.bindings` — flat per-action list of action-group bindings on the active vessel: `{ actionGroup, partId, partName, partTitle, moduleName, actionName, actionGuiName }`. One row per (action, group) pair (an action bound to two groups emits two rows; actions with no group are omitted).
 
 ### Camera API
 
@@ -1193,22 +1191,34 @@ Each burn object contains `{ tangent, normal, binormal, initial_time, duration }
 | `therm.heatShieldFlux` | Heat shield thermal flux | kW |
 | `therm.part[flightId]` | Per-part thermal state — `{ temperature, maxTemperature, temperatureK, maxTemperatureK }`; `null` if the flightId isn't found. Core part temperature only — skin temp not exposed | object |
 
-### `sci.*` / `career.*` / `comm.*` — Science, career & comms *(WIP — in testing)*
+### `career.*` — Career mode
 
 | Key | Description |
 |-----|-------------|
-| `sci.count` | Number of science experiments aboard |
-| `sci.dataAmount` | Total science data aboard |
-| `sci.experiments` | Experiments with data (object) |
 | `career.funds` | Available funds |
 | `career.reputation` | Current reputation |
 | `career.science` | Available science points |
 | `career.mode` | Game mode (CAREER / SCIENCE / SANDBOX) |
+
+### `comm.*` — CommNet
+
+| Key | Description |
+|-----|-------------|
 | `comm.connected` | CommNet is connected |
 | `comm.signalStrength` | CommNet signal strength (0–1) |
 | `comm.controlState` | CommNet control state (0=none, 1=partial, 2=full) |
 | `comm.controlStateName` | CommNet control state name |
 | `comm.signalDelay` | CommNet signal delay (s) |
+
+### `strategies.*` — Administration Building strategies
+
+Callable from any game scene — the activate / deactivate path replicates KSP's eligibility checks against live state, so the Admin Building dialog does not need to be open.
+
+| Key | Description |
+|-----|-------------|
+| `strategies.all` | All career strategies (active and inactive) with title, description, department, current activation state, costs (nominal and strategy-modified), reputation requirements, factor-slider info, and pre-computed `canActivate` / `canDeactivate` flags with human-readable blocked reasons |
+| `strategies.activate[id, factor]` | **Action:** activate a strategy at the given commitment factor (0–1). Returns `0` on success, error string otherwise. |
+| `strategies.deactivate[id]` | **Action:** deactivate an active strategy. Returns `0` on success, error string otherwise. |
 
 ---
 
