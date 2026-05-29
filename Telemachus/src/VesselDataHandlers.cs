@@ -62,6 +62,9 @@ namespace Telemachus
         [TelemetryAPI("v.surfaceSpeed", "Surface Speed", Units = APIEntry.UnitType.VELOCITY, Category = "vessel", ReturnType = "double")]
         object SurfaceSpeed(DataSources ds) => ds.vessel.horizontalSrfSpeed;
 
+        [TelemetryAPI("v.horizontalVelocity", "Horizontal Surface Speed", Units = APIEntry.UnitType.VELOCITY, Category = "vessel", ReturnType = "double")]
+        object HorizontalVelocity(DataSources ds) => ds.vessel.horizontalSrfSpeed;
+
         [TelemetryAPI("v.verticalSpeed", "Vertical Speed", Units = APIEntry.UnitType.VELOCITY, Category = "vessel", ReturnType = "double")]
         object VerticalSpeed(DataSources ds) => ds.vessel.verticalSpeed;
 
