@@ -1,3 +1,7 @@
+> [!WARNING]
+> **Temporary gonogo fork — not the official Telemachus Reborn.**
+> This fork exists only to carry a few extra data keys that [gonogo](https://github.com/jonpepler/gonogo) needs while the matching upstream PRs await review, and it will be retired once upstream merges them. For the real, maintained mod, use **[TeleIO/Telemachus-1](https://github.com/TeleIO/Telemachus-1)**. Releases here are tagged `…-gonogo` and are intended for manual install by gonogo users only.
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/public/logo.svg">
