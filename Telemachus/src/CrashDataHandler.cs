@@ -293,12 +293,35 @@ namespace Telemachus
             return result;
         }
 
+        /// <summary>
+        /// Lazily drop a snapshot that reverting has made stale. Revert (to
+        /// launch or to editor) rewinds universal time BELOW the snapshot's
+        /// capture UT, so a snapshot dated in the future is provably from a
+        /// timeline that no longer exists. Without this, consumers like the
+        /// Launch &amp; Recovery widget keep blocking recovery of the
+        /// reverted (same-named) vessel until KSP restarts.
+        /// </summary>
+        private static void DropSnapshotIfReverted()
+        {
+            if (_lastCrash == null) return;
+            if (Planetarium.GetUniversalTime() >= _lastCrashUT) return;
+            _lastCrash = null;
+            _lastCrashUT = 0;
+            _lastCrashVesselId = null;
+        }
+
         [TelemetryAPI("crash.hasRecent",
-            "Whether a crash snapshot has been captured this session.",
+            "Whether a crash snapshot has been captured this session. " +
+            "A revert that rewinds time below the snapshot's capture UT " +
+            "clears it — the crash belongs to an undone timeline.",
             AlwaysEvaluable = true,
             Category = "crash",
             ReturnType = "bool")]
-        object HasRecent(DataSources ds) => _lastCrash != null;
+        object HasRecent(DataSources ds)
+        {
+            DropSnapshotIfReverted();
+            return _lastCrash != null;
+        }
 
         [TelemetryAPI("crash.lastCrash",
             "Most recent notable-vessel crash snapshot. Captures terrain " +
@@ -313,12 +336,17 @@ namespace Telemachus
             "of {partName, partTitle, partId, msg}), crewAboard (names), " +
             "kerbalsKilled (names), events (flight log), flightStats. " +
             "Per-vessel collision events within 5 seconds coalesce into one " +
-            "snapshot. Persists across scene changes; cleared on KSP restart.",
+            "snapshot. Persists across scene changes; cleared on KSP restart " +
+            "or by a revert that rewinds time below the snapshot's ut.",
             AlwaysEvaluable = true,
             Plotable = false,
             Category = "crash",
             ReturnType = "object")]
-        object LastCrash(DataSources ds) => _lastCrash;
+        object LastCrash(DataSources ds)
+        {
+            DropSnapshotIfReverted();
+            return _lastCrash;
+        }
     }
 
     /// <summary>Deferred subscriber — instance handlers required because EvtDelegate ctor reads Target.GetType().</summary>
